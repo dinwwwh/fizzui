@@ -35,6 +35,12 @@ importers:
       '@vanilla-extract/css':
         specifier: ^1.15.3
         version: 1.15.3
+      '@vanilla-extract/recipes':
+        specifier: ^0.5.3
+        version: 0.5.3(@vanilla-extract/css@1.15.3)
+      radash:
+        specifier: ^12.1.0
+        version: 12.1.0
     devDependencies:
       '@vanilla-extract/esbuild-plugin':
         specifier: ^2.3.8
@@ -899,6 +905,11 @@ packages:
 
   '@vanilla-extract/private@1.0.5':
     resolution: {integrity: sha512-6YXeOEKYTA3UV+RC8DeAjFk+/okoNz/h88R+McnzA2zpaVqTR/Ep+vszkWYlGBcMNO7vEkqbq5nT/JMMvhi+tw==}
+
+  '@vanilla-extract/recipes@0.5.3':
+    resolution: {integrity: sha512-SPREq1NmaoKuvJeOV0pppOkwy3pWZUoDufsyQ6iHrbkHhAU7XQqG9o0iZSmg5JoVgDLIiOr9djQb0x9wuxig7A==}
+    peerDependencies:
+      '@vanilla-extract/css': ^1.0.0
 
   '@vue/compiler-core@3.4.34':
     resolution: {integrity: sha512-Z0izUf32+wAnQewjHu+pQf1yw00EGOmevl1kE+ljjjMe7oEfpQ+BI3/JNK7yMB4IrUsqLDmPecUrpj3mCP+yJQ==}
@@ -2033,6 +2044,10 @@ packages:
 
   queue-microtask@1.2.3:
     resolution: {integrity: sha512-NuaNSa6flKT5JaSYQzJok04JzTL1CA6aGhv5rfLW3PgqA+M2ChpZQnAC8h8i4ZFkBS8X5RqkDBHA7r4hej3K9A==}
+
+  radash@12.1.0:
+    resolution: {integrity: sha512-b0Zcf09AhqKS83btmUeYBS8tFK7XL2e3RvLmZcm0sTdF1/UUlHSsjXdCcWNxe7yfmAlPve5ym0DmKGtTzP6kVQ==}
+    engines: {node: '>=14.18.0'}
 
   read-pkg-up@7.0.1:
     resolution: {integrity: sha512-zK0TB7Xd6JpCLmlLmufqykGE+/TlOePD6qKClNW7hHDKFh/J7/7gCWGR7joEQEW1bKq3a3yUZSObOoWLFQ4ohg==}
@@ -3393,6 +3408,10 @@ snapshots:
 
   '@vanilla-extract/private@1.0.5': {}
 
+  '@vanilla-extract/recipes@0.5.3(@vanilla-extract/css@1.15.3)':
+    dependencies:
+      '@vanilla-extract/css': 1.15.3
+
   '@vue/compiler-core@3.4.34':
     dependencies:
       '@babel/parser': 7.24.8
@@ -4614,6 +4633,8 @@ snapshots:
   queue-lit@1.5.2: {}
 
   queue-microtask@1.2.3: {}
+
+  radash@12.1.0: {}
 
   read-pkg-up@7.0.1:
     dependencies:
