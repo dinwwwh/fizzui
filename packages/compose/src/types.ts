@@ -1,6 +1,8 @@
 import type { RuntimeFn } from '@vanilla-extract/recipes'
 
 export type BaseVariants = {
+  class?: string
+  className?: string
   [key: string]: string | number | boolean | undefined | symbol
 } | undefined
 
@@ -22,10 +24,10 @@ export type ChainableSlots<
   Root extends RuntimeFn<any> = RuntimeFn<any>,
   Children extends Record<string, ChainableSlots> = Record<string, any>,
 > = {
-  (variants?: Parameters<Root>[0]): ChainableSlots<Root, Children>
+  (variants?: Parameters<Root>[0] & { className?: string, class?: string }): ChainableSlots<Root, Children>
   toString: () => string
   root: {
-    (variants?: Parameters<Root>[0]): string
+    (variants?: Parameters<Root>[0] & { className?: string, class?: string }): string
     toString: () => string
   }
 } & Omit<Children, (typeof exclusiveSlotsKeys)[number]>

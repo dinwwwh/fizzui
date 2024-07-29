@@ -2,10 +2,10 @@ import { type BaseVariants, type ChainableSlotTree, type SlotTree, exclusiveSlot
 import { filterValidRFVariants } from './utils'
 import { detailVariantsSymbol, getDetailVariants } from './variants'
 
-export function compose<C extends SlotTree>(tree: C, inheritedVariants: Exclude<BaseVariants, undefined> = {}, rootVariants: BaseVariants = undefined): ChainableSlotTree<C> {
+export function compose<C extends SlotTree>(tree: C, inheritedVariants: Exclude<BaseVariants, undefined> = {}, rootVariants?: BaseVariants, className?: string): ChainableSlotTree<C> {
   const detailVariants = getDetailVariants(inheritedVariants)
 
-  const composed = Object.assign((variants: Parameters<C['root']>[0]): ChainableSlotTree<C> => {
+  const composed = Object.assign((variants: Parameters<C['root']>[0] & { className?: string, class?: string }): ChainableSlotTree<C> => {
     return compose(tree, {
       ...filterValidRFVariants(tree.root, inheritedVariants),
       ...filterValidRFVariants(tree.root, variants),
@@ -14,9 +14,9 @@ export function compose<C extends SlotTree>(tree: C, inheritedVariants: Exclude<
     }, {
       ...rootVariants,
       ...variants,
-    })
+    }, [variants?.className, variants?.class].filter(Boolean).join(' '))
   }, {
-    root(variants: Parameters<C['root']>[0]): string {
+    root(variants: Parameters<C['root']>[0] & { className?: string, class?: string }): string {
       return tree.root({
         ...filterValidRFVariants(tree.root, inheritedVariants),
         ...filterValidRFVariants(tree.root, {
@@ -29,13 +29,15 @@ export function compose<C extends SlotTree>(tree: C, inheritedVariants: Exclude<
           ...variants,
         }],
       })
+      + (variants?.className ? ` ${variants.className}` : '')
+      + (variants?.class ? ` ${variants.class}` : '')
     },
     toString(): string {
       return tree.root({
         ...filterValidRFVariants(tree.root, inheritedVariants),
 
         [detailVariantsSymbol]: [...detailVariants, rootVariants],
-      })
+      }) + (className ? ` ${className}` : '')
     },
     __tree: tree,
   }) as any
