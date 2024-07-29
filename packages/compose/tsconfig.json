@@ -7,6 +7,9 @@
 
     /* Bundler mode */
     "moduleResolution": "bundler",
+    "paths": {
+      "@compose/*": ["./src/*"]
+    },
     "resolveJsonModule": true,
 
     /* Linting */

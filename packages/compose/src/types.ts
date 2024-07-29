@@ -11,7 +11,7 @@ export const exclusiveSlotsKeys = [
   'prototype',
   'root',
   'toString',
-  '__slots',
+  '__tree',
 ] as const
 
 export type ChainableSlots<
@@ -28,25 +28,21 @@ export type ChainableSlots<
 
 export interface SlotTree<Root extends RuntimeFn<any> = RuntimeFn<any>> {
   root: Root
-  [key: string]: RuntimeFn<any> | SlotTree | { __slots: SlotTree }
+  [key: string]: RuntimeFn<any> | SlotTree | { __tree: SlotTree }
 }
 
-export type ChainableSlotTree<S extends SlotTree> = ChainableSlots<
-  S['root'],
-  {
-    [K in keyof S]: S[K] extends RuntimeFn<any>
-      ? ChainableSlots<S[K], Record<string, never>>
-      : S[K] extends SlotTree
-        ? ChainableSlotTree<S[K]>
-        : S[K] extends { __slots: SlotTree }
-          ? ChainableSlotTree<S[K]['__slots']>
+export type ChainableSlotTree<S extends SlotTree> = {
+  __tree: S
+} & ChainableSlots<S['root'], {
+  [K in keyof S]: K extends 'root' ? never
+    : S[K] extends { __tree: SlotTree }
+      ? ChainableSlotTree<S[K]['__tree']>
+      : S[K] extends RuntimeFn<any>
+        ? ChainableSlotTree<{ root: S[K] }>
+        : S[K] extends SlotTree
+          ? ChainableSlotTree<S[K]>
           : never;
-  }
->
-
-export type ComposableSlots<S extends SlotTree> = {
-  __slots: S
-} & ChainableSlotTree<S>
+}>
 
 export interface MergeRFs<
   A extends RuntimeFn<any>,

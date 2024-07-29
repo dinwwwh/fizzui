@@ -11,6 +11,7 @@
     "build": "turbo build --filter=./apps/*",
     "preview": "turbo preview --filter=./apps/*",
     "type:check": "turbo type:check",
+    "test": "turbo test",
     "lint:check": "eslint --max-warnings 0 .",
     "lint:fix": "eslint --max-warnings 0 --fix ."
   },

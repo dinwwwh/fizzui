@@ -2,6 +2,10 @@ import type { RuntimeFn } from '@vanilla-extract/recipes'
 import { unique } from 'radash'
 import type { MergeRFs } from './types'
 
+export type BaseVariants = {
+  [key: string]: string | number | boolean | undefined | symbol
+} | undefined
+
 export function interceptRF<T extends RuntimeFn<any>>(
   runtimeFn: T,
   interceptor: (
@@ -22,20 +26,20 @@ export function interceptRF<T extends RuntimeFn<any>>(
 
 export function filterValidRFVariants<T extends RuntimeFn<any>>(
   rf: T,
-  variants: Parameters<T>[0],
+  variants: BaseVariants,
 ): Parameters<T>[0] {
-  const validVariants: typeof variants = {}
+  const validVariants: Parameters<T>[0] = {}
 
   for (const key in variants) {
     if (!(key in rf.classNames.variants)) {
       continue
     }
 
-    if (variants[key] && !(variants[key] in rf.classNames.variants[key]!)) {
+    if (variants[key] && !(String(variants[key]) in rf.classNames.variants[key]!)) {
       continue
     }
 
-    validVariants[key] = variants[key]
+    validVariants[key] = variants[key] as any
   }
 
   return validVariants
