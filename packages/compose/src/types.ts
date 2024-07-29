@@ -1,5 +1,9 @@
 import type { RuntimeFn } from '@vanilla-extract/recipes'
 
+export type BaseVariants = {
+  [key: string]: string | number | boolean | undefined | symbol
+} | undefined
+
 export const exclusiveSlotsKeys = [
   'apply',
   'arguments',

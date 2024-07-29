@@ -1,10 +1,6 @@
 import type { RuntimeFn } from '@vanilla-extract/recipes'
 import { unique } from 'radash'
-import type { MergeRFs } from './types'
-
-export type BaseVariants = {
-  [key: string]: string | number | boolean | undefined | symbol
-} | undefined
+import type { BaseVariants, MergeRFs } from './types'
 
 export function interceptRF<T extends RuntimeFn<any>>(
   runtimeFn: T,

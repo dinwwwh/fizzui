@@ -1,5 +1,5 @@
-import { type ChainableSlotTree, type SlotTree, exclusiveSlotsKeys } from './types'
-import { type BaseVariants, filterValidRFVariants } from './utils'
+import { type BaseVariants, type ChainableSlotTree, type SlotTree, exclusiveSlotsKeys } from './types'
+import { filterValidRFVariants } from './utils'
 
 export function compose<C extends SlotTree>(tree: C, inheritedVariants?: BaseVariants): ChainableSlotTree<C> {
   const composed = Object.assign((variants: Parameters<C['root']>[0]): ChainableSlotTree<C> => {
