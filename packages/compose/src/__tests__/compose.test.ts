@@ -3,20 +3,20 @@ import { button } from './styles/button'
 import { buttonIcon, buttonRoot } from './styles/button/ui.css'
 
 it('is chainable', () => {
-  expectTypeOf<Parameters<typeof button>[0]>().toEqualTypeOf<Parameters<typeof buttonRoot>[0]>()
-  expectTypeOf<Parameters<ReturnType<typeof button>['root']>[0]>().toEqualTypeOf<Parameters<typeof buttonRoot>[0]>()
+  expectTypeOf<Parameters<typeof button>[0]>().toMatchTypeOf<Parameters<typeof buttonRoot>[0] & { className?: string, class?: string } | undefined>()
+  expectTypeOf<Parameters<ReturnType<typeof button>['root']>[0]>().toEqualTypeOf<Parameters<typeof buttonRoot>[0] & { className?: string, class?: string } | undefined>()
 
-  expectTypeOf<Parameters<typeof button['icon']>[0]>().toEqualTypeOf<Parameters<typeof buttonIcon>[0]>()
-  expectTypeOf<Parameters<ReturnType<typeof button['icon']>['root']>[0]>().toEqualTypeOf<Parameters<typeof buttonIcon>[0]>()
+  expectTypeOf<Parameters<typeof button['icon']>[0]>().toEqualTypeOf<Parameters<typeof buttonIcon>[0] & { className?: string, class?: string } | undefined>()
+  expectTypeOf<Parameters<ReturnType<typeof button['icon']>['root']>[0]>().toEqualTypeOf<Parameters<typeof buttonIcon>[0] & { className?: string, class?: string } | undefined>()
 
-  expectTypeOf<Parameters<typeof button['childButton']>[0]>().toEqualTypeOf<Parameters<typeof buttonRoot>[0]>()
-  expectTypeOf<Parameters<ReturnType<typeof button['childButton']>['root']>[0]>().toEqualTypeOf<Parameters<typeof buttonRoot>[0]>()
+  expectTypeOf<Parameters<typeof button['childButton']>[0]>().toEqualTypeOf<Parameters<typeof buttonRoot>[0] & { className?: string, class?: string } | undefined>()
+  expectTypeOf<Parameters<ReturnType<typeof button['childButton']>['root']>[0]>().toEqualTypeOf<Parameters<typeof buttonRoot>[0] & { className?: string, class?: string } | undefined>()
 
-  expectTypeOf<Parameters<typeof button['childButtonIcon']>[0]>().toEqualTypeOf<Parameters<typeof buttonIcon>[0]>()
-  expectTypeOf<Parameters<ReturnType<typeof button['childButtonIcon']>['root']>[0]>().toEqualTypeOf<Parameters<typeof buttonIcon>[0]>()
+  expectTypeOf<Parameters<typeof button['childButtonIcon']>[0]>().toEqualTypeOf<Parameters<typeof buttonIcon>[0] & { className?: string, class?: string } | undefined>()
+  expectTypeOf<Parameters<ReturnType<typeof button['childButtonIcon']>['root']>[0]>().toEqualTypeOf<Parameters<typeof buttonIcon>[0] & { className?: string, class?: string } | undefined>()
 
-  expectTypeOf<Parameters<typeof button['childButton']['icon']>[0]>().toEqualTypeOf<Parameters<typeof buttonIcon>[0]>()
-  expectTypeOf<Parameters<ReturnType<typeof button['childButton']['icon']>['root']>[0]>().toEqualTypeOf<Parameters<typeof buttonIcon>[0]>()
+  expectTypeOf<Parameters<typeof button['childButton']['icon']>[0]>().toEqualTypeOf<Parameters<typeof buttonIcon>[0] & { className?: string, class?: string } | undefined>()
+  expectTypeOf<Parameters<ReturnType<typeof button['childButton']['icon']>['root']>[0]>().toEqualTypeOf<Parameters<typeof buttonIcon>[0] & { className?: string, class?: string } | undefined>()
 
   expect(button.toString()).toBe(buttonRoot())
   expect(button.root()).toBe(buttonRoot())

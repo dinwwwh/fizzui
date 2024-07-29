@@ -8,7 +8,7 @@
   },
   "scripts": {
     "dev": "turbo dev --filter=./apps/*",
-    "build": "turbo build --filter=./apps/*",
+    "build": "turbo build",
     "preview": "turbo preview --filter=./apps/*",
     "type:check": "turbo type:check",
     "test": "turbo test",
