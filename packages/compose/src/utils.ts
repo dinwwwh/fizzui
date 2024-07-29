@@ -48,10 +48,12 @@ export function mergeRFs<
   const call = (
     ...[variants]: Parameters<A> & Parameters<B>
   ): ReturnType<A> & ReturnType<B> => {
-    const c1 = a(filterValidRFVariants(a, variants))
-    const c2 = b(filterValidRFVariants(b, variants))
-
-    return (c1 + (c1 ? ' ' : '') + c2) as ReturnType<A> & ReturnType<B>
+    return [
+      a(filterValidRFVariants(a, variants)),
+      b(filterValidRFVariants(b, variants)),
+    ]
+      .filter(Boolean)
+      .join(' ') as ReturnType<A> & ReturnType<B>
   }
 
   const variants = (): ReturnType<A['variants']> &
