@@ -2,24 +2,6 @@ import type { RuntimeFn } from '@vanilla-extract/recipes'
 import { unique } from 'radash'
 import type { BaseVariants, MergeRFs } from './types'
 
-export function interceptRF<T extends RuntimeFn<any>>(
-  runtimeFn: T,
-  interceptor: (
-    args: Parameters<T>,
-    runtimeFn: T
-  ) => string | undefined | void,
-): T {
-  return Object.assign((...args: Parameters<T>): ReturnType<T> => {
-    const className = interceptor(args, runtimeFn)
-
-    if (className === undefined) {
-      return runtimeFn(...args) as ReturnType<T>
-    }
-
-    return className as ReturnType<T>
-  }, runtimeFn)
-}
-
 export function filterValidRFVariants<T extends RuntimeFn<any>>(
   rf: T,
   variants: BaseVariants,
