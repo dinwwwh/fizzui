@@ -1,11 +1,17 @@
 import { compose } from '@compose/compose'
-import { inheritVariants, uninheritVariants } from '@compose/variants'
+import { inheritVariants, mapInheritedVariants, uninheritVariants } from '@compose/variants'
 import { buttonRoot, iconRoot } from './ui.css'
 
 export const button = compose({
   root: buttonRoot,
   icon: iconRoot,
   uninheritIcon: uninheritVariants(iconRoot),
+  mappedIcon: mapInheritedVariants(iconRoot, (variants = {}) => {
+    return {
+      ...variants,
+      size: variants.size || 'large',
+    }
+  }),
 
   withUninheritedRoot: {
     root: uninheritVariants(buttonRoot),
@@ -41,4 +47,13 @@ export const button = compose({
       uninheritIcon: uninheritVariants(iconRoot),
     }),
   }))),
+
+  mappedComposed: mapInheritedVariants(compose({
+    root: buttonRoot,
+  }), (variants = {}) => {
+    return {
+      ...variants,
+      size: variants.size || 'large',
+    }
+  }),
 })

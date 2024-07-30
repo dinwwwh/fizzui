@@ -1,6 +1,6 @@
 import { type BaseVariants, type ChainableSlotTree, type SlotTree, exclusiveSlotsKeys } from './types'
 import { filterValidRFVariants } from './utils'
-import { getIsUninheritedVariants } from './variants'
+import { getInheritedVariantsMapper, getShouldUninheritVariants } from './variants'
 
 export function compose<C extends SlotTree>(tree: C, inheritedVariants?: BaseVariants, className?: string): ChainableSlotTree<C> {
   const composed = Object.assign((variants: Parameters<C['root']>[0] & { className?: string, class?: string }): ChainableSlotTree<C> => {
@@ -30,26 +30,29 @@ export function compose<C extends SlotTree>(tree: C, inheritedVariants?: BaseVar
       continue
     }
 
-    const isUninherited = getIsUninheritedVariants(tree[key])
+    const shouldUninheritVariants = getShouldUninheritVariants(tree[key])
+    const inheritedVariantsMapper = getInheritedVariantsMapper(tree[key])
+
+    const inheritedVariantsForChild = inheritedVariantsMapper(shouldUninheritVariants ? undefined : inheritedVariants)
 
     if ('__tree' in tree[key] && typeof tree[key].__tree === 'object') {
       composed[key] = compose(
         tree[key].__tree as SlotTree,
-        isUninherited ? undefined : inheritedVariants,
+        inheritedVariantsForChild,
       )
     }
 
     else if (typeof tree[key] === 'function') {
       composed[key] = compose(
         { root: tree[key] },
-        isUninherited ? undefined : inheritedVariants,
+        inheritedVariantsForChild,
       )
     }
 
     else if (typeof tree[key] === 'object') {
       composed[key] = compose(
         tree[key] as SlotTree,
-        isUninherited ? undefined : inheritedVariants,
+        inheritedVariantsForChild,
       )
     }
   }
