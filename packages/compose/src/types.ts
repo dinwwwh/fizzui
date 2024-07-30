@@ -50,7 +50,7 @@ export type ChainableSlotTree<S extends SlotTree> = {
           : never;
 }>
 
-export interface MergeRFs<
+export interface MergeRF<
   A extends RuntimeFn<any>,
   B extends RuntimeFn<any>,
 > {
