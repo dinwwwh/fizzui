@@ -3,25 +3,29 @@ import { filterValidRFVariants } from './utils'
 import { getInheritedVariantsMapper, getShouldUninheritVariants } from './variants'
 
 export function compose<C extends SlotTree>(tree: C, inheritedVariants?: BaseVariants, className?: string): ChainableSlotTree<C> {
+  const toString = (): string => {
+    return tree.root({
+      ...filterValidRFVariants(tree.root, inheritedVariants),
+    }) + (className ? ` ${className}` : '')
+  }
+
   const composed = Object.assign((variants: Parameters<C['root']>[0] & { className?: string, class?: string }): ChainableSlotTree<C> => {
     return compose(tree, {
       ...inheritedVariants,
       ...variants,
     }, [variants?.className, variants?.class].filter(Boolean).join(' '))
   }, {
-    root(variants: Parameters<C['root']>[0] & { className?: string, class?: string }): string {
+    root: Object.assign((variants: Parameters<C['root']>[0] & { className?: string, class?: string }): string => {
       return tree.root({
         ...filterValidRFVariants(tree.root, inheritedVariants),
         ...filterValidRFVariants(tree.root, variants),
       })
       + (variants?.className ? ` ${variants.className}` : '')
       + (variants?.class ? ` ${variants.class}` : '')
-    },
-    toString(): string {
-      return tree.root({
-        ...filterValidRFVariants(tree.root, inheritedVariants),
-      }) + (className ? ` ${className}` : '')
-    },
+    }, {
+      toString,
+    }),
+    toString,
     __tree: tree,
   }) as any
 

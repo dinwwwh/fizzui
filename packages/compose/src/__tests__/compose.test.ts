@@ -73,3 +73,10 @@ it('bypass invalid inherited variants', () => {
   expect(button({ size: 'small', rounded: true }).icon.toString()).toBe(buttonIcon({ size: 'small' }))
   expect(button({ rounded: true }).icon.toString()).toBe(buttonIcon())
 })
+
+it('compose root correctly', () => {
+  expect(button.root()).toBe(buttonRoot())
+  expect(button.toString()).toBe(buttonRoot())
+  expect(`${button.root}`).toBe(buttonRoot())
+  expect(`${button({ rounded: true }).root}`).toBe(buttonRoot({ rounded: true }))
+})
