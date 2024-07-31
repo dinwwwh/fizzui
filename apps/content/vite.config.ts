@@ -8,6 +8,7 @@ export default defineConfig({
   resolve: {
     alias: {
       '@content': path.resolve(__dirname, './src'),
+      '@styles': path.resolve(__dirname, '../../packages/styles/src'),
     },
   },
   plugins: [react(), vanillaExtractPlugin()],

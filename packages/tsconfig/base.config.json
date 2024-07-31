@@ -17,6 +17,7 @@
     "types": [],
 
     "strict": true,
+    "outDir": "${configDir}/dist",
     "noUncheckedIndexedAccess": true,
     "declaration": true,
     "declarationMap": true,

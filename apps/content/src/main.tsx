@@ -1,6 +1,5 @@
 import '@fontsource-variable/inter'
 import './globals.css'
-import '@fizzui/styles/css'
 
 import React from 'react'
 import ReactDOM from 'react-dom/client'

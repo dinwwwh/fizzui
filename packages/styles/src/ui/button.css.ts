@@ -36,8 +36,8 @@ export const buttonRoot = recipe({
       solid: {},
       ghost: {},
     },
-    intent: {
-      neutral: {},
+    color: {
+      default: {},
     },
     square: {
       true: {},
@@ -46,7 +46,7 @@ export const buttonRoot = recipe({
 
   compoundVariants: [
     {
-      variants: { variant: 'solid', intent: 'neutral' },
+      variants: { variant: 'solid', color: 'default' },
       style: {
         backgroundColor: vars.bg.gray[950],
         backgroundImage: `linear-gradient(to bottom, ${vars.bg.gray[800]}, ${vars.bg.gray[950]})`,
@@ -70,7 +70,7 @@ export const buttonRoot = recipe({
       },
     },
     {
-      variants: { variant: 'ghost', intent: 'neutral' },
+      variants: { variant: 'ghost', color: 'default' },
       style: {
         backgroundColor: 'transparent',
         borderWidth: 0,
@@ -110,7 +110,7 @@ export const buttonRoot = recipe({
   defaultVariants: {
     size: 'md',
     variant: 'solid',
-    intent: 'neutral',
+    color: 'default',
   },
 })
 
@@ -126,7 +126,7 @@ export const buttonIcon = recipe({
         height: rem(16),
       },
     },
-    alignment: {
+    align: {
       start: {},
       center: {},
       end: {},
@@ -135,42 +135,42 @@ export const buttonIcon = recipe({
 
   compoundVariants: [
     {
-      variants: { size: 'sm', alignment: 'start' },
+      variants: { size: 'sm', align: 'start' },
       style: {
         marginLeft: rem(-2),
         marginRight: rem(4),
       },
     },
     {
-      variants: { size: 'sm', alignment: 'center' },
+      variants: { size: 'sm', align: 'center' },
       style: {
         marginLeft: rem(4),
         marginRight: rem(4),
       },
     },
     {
-      variants: { size: 'sm', alignment: 'end' },
+      variants: { size: 'sm', align: 'end' },
       style: {
         marginLeft: rem(4),
         marginRight: rem(-2),
       },
     },
     {
-      variants: { size: 'md', alignment: 'start' },
+      variants: { size: 'md', align: 'start' },
       style: {
         marginLeft: rem(-3),
         marginRight: rem(6),
       },
     },
     {
-      variants: { size: 'md', alignment: 'center' },
+      variants: { size: 'md', align: 'center' },
       style: {
         marginLeft: rem(6),
         marginRight: rem(6),
       },
     },
     {
-      variants: { size: 'md', alignment: 'end' },
+      variants: { size: 'md', align: 'end' },
       style: {
         marginLeft: rem(6),
         marginRight: rem(-3),
@@ -180,6 +180,6 @@ export const buttonIcon = recipe({
 
   defaultVariants: {
     size: 'md',
-    alignment: 'start',
+    align: 'start',
   },
 })
