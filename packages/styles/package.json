@@ -1,5 +1,5 @@
 {
-  "name": "@fizzui/compose",
+  "name": "@fizzui/styles",
   "type": "module",
   "version": "0.0.0",
   "private": true,
@@ -8,16 +8,17 @@
       "types": "./dist/src/index.d.ts",
       "import": "./dist/index.js",
       "default": "./dist/index.js"
-    }
+    },
+    "./css": "./dist/style.css"
   },
   "scripts": {
     "dev": "vite build --watch",
     "build": "vite build",
-    "type:check": "tsc --noEmit",
-    "test": "vitest run && pnpm type:check",
-    "test:watch": "vitest watch"
+    "type:check": "tsc --noEmit"
   },
   "dependencies": {
+    "@fizzui/compose": "workspace:^",
+    "@vanilla-extract/css": "^1.15.3",
     "@vanilla-extract/recipes": "^0.5.3",
     "radash": "^12.1.0"
   },
@@ -26,7 +27,6 @@
     "@vanilla-extract/vite-plugin": "^4.0.13",
     "typescript": "^5.5.4",
     "vite": "^5.3.5",
-    "vite-plugin-dts": "4.0.0-beta.2",
-    "vitest": "^2.0.4"
+    "vite-plugin-dts": "4.0.0-beta.2"
   }
 }

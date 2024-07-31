@@ -1,8 +1,8 @@
 {
-  "extends": "@fizzui/tsconfig/base.config.json",
+  "extends": "@fizzui/tsconfig/react.config.json",
   "compilerOptions": {
     "paths": {
-      "@compose/*": ["./src/*"]
+      "@content/*": ["./src/*"]
     },
     "types": ["vite/client"]
   },

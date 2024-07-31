@@ -1,6 +1,4 @@
 export * from './types'
-export * from './reset.css'
 export * from './utils'
-export * from './lib'
 export * from './compose'
 export * from './variants'

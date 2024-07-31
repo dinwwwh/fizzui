@@ -1,0 +1,28 @@
+{
+  "name": "content",
+  "type": "module",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "type:check": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@fizzui/styles": "workspace:^",
+    "@fontsource-variable/inter": "^5.0.19",
+    "@tabler/icons-react": "^3.11.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@fizzui/tsconfig": "workspace:^",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "@vanilla-extract/vite-plugin": "^4.0.13",
+    "@vitejs/plugin-react-swc": "^3.5.0",
+    "typescript": "^5.5.4",
+    "vite": "^5.3.5"
+  }
+}

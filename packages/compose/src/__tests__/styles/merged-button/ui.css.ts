@@ -1,4 +1,4 @@
-import { recipe } from '@compose/lib'
+import { recipe } from '@vanilla-extract/recipes'
 
 export const extendedButtonRoot = recipe({
   base: ['extended-button-root-base'],

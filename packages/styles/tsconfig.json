@@ -2,7 +2,7 @@
   "extends": "@fizzui/tsconfig/base.config.json",
   "compilerOptions": {
     "paths": {
-      "@compose/*": ["./src/*"]
+      "@styles/*": ["./src/*"]
     },
     "types": ["vite/client"]
   },
