@@ -18,4 +18,14 @@ export default antfu(
       'unicorn/prefer-includes': ['off'],
     },
   },
+  {
+    files: ['packages/styles/src/**/*.css.ts'],
+    rules: {
+      'no-restricted-imports': ['error', {
+        name: '@vanilla-extract/recipes',
+        importNames: ['recipe'],
+        message: 'Please use the `recipe` function from `@styles/lib` instead.',
+      }],
+    },
+  },
 )
