@@ -1,6 +1,7 @@
 body {
   font-family: 'Inter Variable', sans-serif;
   color: red;
+  margin: 0;
 }
 
 button:not(:disabled, [aria-disabled='true'], [data-disabled='true']) {
