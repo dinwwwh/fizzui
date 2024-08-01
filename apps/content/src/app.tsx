@@ -2,6 +2,7 @@ import { ButtonDemo } from './demos/button'
 import classes from './app.module.css'
 import { InputDemo } from './demos/input'
 import { InputWithButtonDemo } from './demos/input-with-button'
+import { PopoverDemo } from './demos/popover'
 
 export function App() {
   return (
@@ -14,6 +15,9 @@ export function App() {
       </div>
       <div className={classes.demo}>
         <InputWithButtonDemo />
+      </div>
+      <div className={classes.demo}>
+        <PopoverDemo />
       </div>
     </div>
   )
