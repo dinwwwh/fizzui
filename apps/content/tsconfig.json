@@ -2,8 +2,7 @@
   "extends": "@fizzui/tsconfig/react.config.json",
   "compilerOptions": {
     "paths": {
-      "@content/*": ["./src/*"],
-      "@styles": ["../../packages/styles/src"]
+      "@content/*": ["./src/*"]
     },
     "types": ["vite/client"]
   },

@@ -1,5 +1,5 @@
-import { button } from '@styles'
 import { IconDownload, IconMenu2, IconUpload } from '@tabler/icons-react'
+import { button } from '@fizzui/styles'
 import classes from './styles.module.css'
 
 export function ButtonDemo() {

@@ -9,6 +9,7 @@ export default defineConfig({
     alias: {
       '@content': path.resolve(__dirname, './src'),
       '@styles': path.resolve(__dirname, '../../packages/styles/src'),
+      '@fizzui/styles': path.resolve(__dirname, '../../packages/styles/src'),
     },
   },
   plugins: [react(), vanillaExtractPlugin()],
