@@ -3,6 +3,7 @@ import classes from './app.module.css'
 import { InputDemo } from './demos/input'
 import { InputWithButtonDemo } from './demos/input-with-button'
 import { PopoverDemo } from './demos/popover'
+import { SelectDemo } from './demos/select'
 
 export function App() {
   return (
@@ -18,6 +19,9 @@ export function App() {
       </div>
       <div className={classes.demo}>
         <PopoverDemo />
+      </div>
+      <div className={classes.demo}>
+        <SelectDemo />
       </div>
     </div>
   )
