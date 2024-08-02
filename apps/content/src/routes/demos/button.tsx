@@ -1,5 +1,5 @@
 import { DemoContainer, DemoFlexRow } from '@content/components/demo'
-import { button } from '@fizzui/styles'
+import { button, title } from '@fizzui/styles'
 import { IconDownload, IconMenu2, IconUpload } from '@tabler/icons-react'
 import { createFileRoute } from '@tanstack/react-router'
 
@@ -32,7 +32,10 @@ function ButtonDemoPage() {
         <a href="#" className={button({ square: true, size: 'sm' }).toString()}>
           <IconMenu2 className={button({ square: true, size: 'sm' }).icon({ align: 'center' }).toString()} />
         </a>
+      </DemoFlexRow>
 
+      <h2 className={`${title({ size: 'lg' })}`}>Ghost</h2>
+      <DemoFlexRow>
         <a href="#" className={button({ variant: 'ghost', square: true, size: 'sm' }).toString()}>
           <IconMenu2 className={button({ variant: 'ghost', square: true, size: 'sm' }).icon({ align: 'center' }).toString()} />
         </a>

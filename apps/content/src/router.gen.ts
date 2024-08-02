@@ -11,12 +11,18 @@
 // Import Routes
 
 import { Route as rootRoute } from './routes/__root'
+import { Route as DemosTypographyImport } from './routes/demos/typography'
 import { Route as DemosSelectImport } from './routes/demos/select'
 import { Route as DemosPopoverImport } from './routes/demos/popover'
 import { Route as DemosInputImport } from './routes/demos/input'
 import { Route as DemosButtonImport } from './routes/demos/button'
 
 // Create/Update Routes
+
+const DemosTypographyRoute = DemosTypographyImport.update({
+  path: '/demos/typography',
+  getParentRoute: () => rootRoute,
+} as any)
 
 const DemosSelectRoute = DemosSelectImport.update({
   path: '/demos/select',
@@ -70,6 +76,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DemosSelectImport
       parentRoute: typeof rootRoute
     }
+    '/demos/typography': {
+      id: '/demos/typography'
+      path: '/demos/typography'
+      fullPath: '/demos/typography'
+      preLoaderRoute: typeof DemosTypographyImport
+      parentRoute: typeof rootRoute
+    }
   }
 }
 
@@ -80,6 +93,7 @@ export const routeTree = rootRoute.addChildren({
   DemosInputRoute,
   DemosPopoverRoute,
   DemosSelectRoute,
+  DemosTypographyRoute,
 })
 
 /* prettier-ignore-end */
@@ -93,7 +107,8 @@ export const routeTree = rootRoute.addChildren({
         "/demos/button",
         "/demos/input",
         "/demos/popover",
-        "/demos/select"
+        "/demos/select",
+        "/demos/typography"
       ]
     },
     "/demos/button": {
@@ -107,6 +122,9 @@ export const routeTree = rootRoute.addChildren({
     },
     "/demos/select": {
       "filePath": "demos/select.tsx"
+    },
+    "/demos/typography": {
+      "filePath": "demos/typography.tsx"
     }
   }
 }
