@@ -20,9 +20,9 @@ function ButtonDemoPage() {
           <IconMenu2 className={button({ square: true }).icon({ align: 'center' }).toString()} />
         </a>
 
-        <a href="#" className={button({ square: true }).toString()} data-disabled>
+        <button className={button({ square: true }).toString()} disabled>
           <IconMenu2 className={button({ square: true }).icon({ align: 'center' }).toString()} />
-        </a>
+        </button>
 
         <button className={button({ size: 'sm' }).toString()}>
           Download

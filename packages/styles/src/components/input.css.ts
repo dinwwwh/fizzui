@@ -1,6 +1,6 @@
 import { recipe } from '@styles/lib'
 import { vars } from '@styles/themes.css'
-import { disabledSelector, rem } from '@styles/utils'
+import { disabledSelector, focusVisibleSelector, rem } from '@styles/utils'
 
 export const inputRoot = recipe({
   base: {
@@ -14,6 +14,12 @@ export const inputRoot = recipe({
       [disabledSelector]: {
         color: vars.fg.gray[500],
         backgroundColor: vars.bg.gray[50],
+        cursor: 'not-allowed',
+      },
+
+      [focusVisibleSelector]: {
+        outline: `${rem(1)} solid ${vars.fg.gray[800]}`,
+        borderColor: vars.fg.gray[800],
       },
     },
   },

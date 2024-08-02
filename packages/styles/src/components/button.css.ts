@@ -1,6 +1,6 @@
 import { recipe } from '@styles/lib'
 import { vars } from '@styles/themes.css'
-import { disabledSelector, enabledSelector, hoverSelector, pressedSelector, rem } from '@styles/utils'
+import { disabledSelector, enabledSelector, focusVisibleSelector, hoverSelector, pressedSelector, rem } from '@styles/utils'
 
 export const buttonRoot = recipe({
   base: {
@@ -11,6 +11,15 @@ export const buttonRoot = recipe({
     transitionProperty: 'filter, background-color, color',
     transitionTimingFunction: 'cubic-bezier(0.4, 0, 0.2, 1)',
     transitionDuration: '200ms',
+
+    selectors: {
+      [enabledSelector]: {
+        cursor: 'pointer',
+      },
+      [disabledSelector]: {
+        cursor: 'not-allowed',
+      },
+    },
   },
 
   variants: {
@@ -38,7 +47,14 @@ export const buttonRoot = recipe({
       ghost: {},
     },
     color: {
-      default: {},
+      default: {
+        selectors: {
+          [focusVisibleSelector]: {
+            outline: `${rem(2)} solid ${vars.fg.gray[800]}`,
+            outlineOffset: rem(2),
+          },
+        },
+      },
     },
     square: {
       true: {},

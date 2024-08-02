@@ -3,13 +3,3 @@ body {
   color: red;
   margin: 0;
 }
-
-button:not(:disabled, [aria-disabled='true'], [data-disabled='true']) {
-  cursor: pointer;
-}
-
-button:disabled,
-[aria-disabled='true'],
-[data-disabled='true'] {
-  cursor: not-allowed;
-}
