@@ -17,6 +17,7 @@ import { Route as DemosPopoverImport } from './routes/demos/popover'
 import { Route as DemosInputImport } from './routes/demos/input'
 import { Route as DemosButtonGroupImport } from './routes/demos/button-group'
 import { Route as DemosButtonImport } from './routes/demos/button'
+import { Route as DemosBadgeImport } from './routes/demos/badge'
 
 // Create/Update Routes
 
@@ -50,10 +51,22 @@ const DemosButtonRoute = DemosButtonImport.update({
   getParentRoute: () => rootRoute,
 } as any)
 
+const DemosBadgeRoute = DemosBadgeImport.update({
+  path: '/demos/badge',
+  getParentRoute: () => rootRoute,
+} as any)
+
 // Populate the FileRoutesByPath interface
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/demos/badge': {
+      id: '/demos/badge'
+      path: '/demos/badge'
+      fullPath: '/demos/badge'
+      preLoaderRoute: typeof DemosBadgeImport
+      parentRoute: typeof rootRoute
+    }
     '/demos/button': {
       id: '/demos/button'
       path: '/demos/button'
@@ -102,6 +115,7 @@ declare module '@tanstack/react-router' {
 // Create and export the route tree
 
 export const routeTree = rootRoute.addChildren({
+  DemosBadgeRoute,
   DemosButtonRoute,
   DemosButtonGroupRoute,
   DemosInputRoute,
@@ -118,6 +132,7 @@ export const routeTree = rootRoute.addChildren({
     "__root__": {
       "filePath": "__root.tsx",
       "children": [
+        "/demos/badge",
         "/demos/button",
         "/demos/button-group",
         "/demos/input",
@@ -125,6 +140,9 @@ export const routeTree = rootRoute.addChildren({
         "/demos/select",
         "/demos/typography"
       ]
+    },
+    "/demos/badge": {
+      "filePath": "demos/badge.tsx"
     },
     "/demos/button": {
       "filePath": "demos/button.tsx"
