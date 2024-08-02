@@ -17,6 +17,7 @@ import { Route as DemosPopoverImport } from './routes/demos/popover'
 import { Route as DemosInputImport } from './routes/demos/input'
 import { Route as DemosButtonGroupImport } from './routes/demos/button-group'
 import { Route as DemosButtonImport } from './routes/demos/button'
+import { Route as DemosBadgeGroupImport } from './routes/demos/badge-group'
 import { Route as DemosBadgeImport } from './routes/demos/badge'
 
 // Create/Update Routes
@@ -51,6 +52,11 @@ const DemosButtonRoute = DemosButtonImport.update({
   getParentRoute: () => rootRoute,
 } as any)
 
+const DemosBadgeGroupRoute = DemosBadgeGroupImport.update({
+  path: '/demos/badge-group',
+  getParentRoute: () => rootRoute,
+} as any)
+
 const DemosBadgeRoute = DemosBadgeImport.update({
   path: '/demos/badge',
   getParentRoute: () => rootRoute,
@@ -65,6 +71,13 @@ declare module '@tanstack/react-router' {
       path: '/demos/badge'
       fullPath: '/demos/badge'
       preLoaderRoute: typeof DemosBadgeImport
+      parentRoute: typeof rootRoute
+    }
+    '/demos/badge-group': {
+      id: '/demos/badge-group'
+      path: '/demos/badge-group'
+      fullPath: '/demos/badge-group'
+      preLoaderRoute: typeof DemosBadgeGroupImport
       parentRoute: typeof rootRoute
     }
     '/demos/button': {
@@ -116,6 +129,7 @@ declare module '@tanstack/react-router' {
 
 export const routeTree = rootRoute.addChildren({
   DemosBadgeRoute,
+  DemosBadgeGroupRoute,
   DemosButtonRoute,
   DemosButtonGroupRoute,
   DemosInputRoute,
@@ -133,6 +147,7 @@ export const routeTree = rootRoute.addChildren({
       "filePath": "__root.tsx",
       "children": [
         "/demos/badge",
+        "/demos/badge-group",
         "/demos/button",
         "/demos/button-group",
         "/demos/input",
@@ -143,6 +158,9 @@ export const routeTree = rootRoute.addChildren({
     },
     "/demos/badge": {
       "filePath": "demos/badge.tsx"
+    },
+    "/demos/badge-group": {
+      "filePath": "demos/badge-group.tsx"
     },
     "/demos/button": {
       "filePath": "demos/button.tsx"
