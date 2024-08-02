@@ -16,6 +16,7 @@ import { Route as DemosToggleSwitchImport } from './routes/demos/toggle-switch'
 import { Route as DemosSelectImport } from './routes/demos/select'
 import { Route as DemosPopoverImport } from './routes/demos/popover'
 import { Route as DemosInputImport } from './routes/demos/input'
+import { Route as DemosCheckboxImport } from './routes/demos/checkbox'
 import { Route as DemosButtonGroupImport } from './routes/demos/button-group'
 import { Route as DemosButtonImport } from './routes/demos/button'
 import { Route as DemosBadgeGroupImport } from './routes/demos/badge-group'
@@ -45,6 +46,11 @@ const DemosPopoverRoute = DemosPopoverImport.update({
 
 const DemosInputRoute = DemosInputImport.update({
   path: '/demos/input',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const DemosCheckboxRoute = DemosCheckboxImport.update({
+  path: '/demos/checkbox',
   getParentRoute: () => rootRoute,
 } as any)
 
@@ -100,6 +106,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DemosButtonGroupImport
       parentRoute: typeof rootRoute
     }
+    '/demos/checkbox': {
+      id: '/demos/checkbox'
+      path: '/demos/checkbox'
+      fullPath: '/demos/checkbox'
+      preLoaderRoute: typeof DemosCheckboxImport
+      parentRoute: typeof rootRoute
+    }
     '/demos/input': {
       id: '/demos/input'
       path: '/demos/input'
@@ -145,6 +158,7 @@ export const routeTree = rootRoute.addChildren({
   DemosBadgeGroupRoute,
   DemosButtonRoute,
   DemosButtonGroupRoute,
+  DemosCheckboxRoute,
   DemosInputRoute,
   DemosPopoverRoute,
   DemosSelectRoute,
@@ -164,6 +178,7 @@ export const routeTree = rootRoute.addChildren({
         "/demos/badge-group",
         "/demos/button",
         "/demos/button-group",
+        "/demos/checkbox",
         "/demos/input",
         "/demos/popover",
         "/demos/select",
@@ -182,6 +197,9 @@ export const routeTree = rootRoute.addChildren({
     },
     "/demos/button-group": {
       "filePath": "demos/button-group.tsx"
+    },
+    "/demos/checkbox": {
+      "filePath": "demos/checkbox.tsx"
     },
     "/demos/input": {
       "filePath": "demos/input.tsx"
