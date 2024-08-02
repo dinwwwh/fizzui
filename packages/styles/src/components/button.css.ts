@@ -34,6 +34,7 @@ export const buttonRoot = recipe({
     },
     variant: {
       solid: {},
+      outline: {},
       ghost: {},
     },
     color: {
@@ -62,6 +63,28 @@ export const buttonRoot = recipe({
           },
           [pressedSelector]: {
             filter: 'brightness(0.8)',
+          },
+          [disabledSelector]: {
+            opacity: 0.35,
+          },
+        },
+      },
+    },
+    {
+      variants: { variant: 'outline', color: 'default' },
+      style: {
+        backgroundColor: 'transparent',
+        borderWidth: rem(1),
+        boxShadow: 'none',
+        color: vars.fg.gray[800],
+
+        selectors: {
+          [hoverSelector]: {
+            backgroundColor: vars.bg.gray[100],
+            color: vars.fg.gray[700],
+          },
+          [pressedSelector]: {
+            filter: 'brightness(0.95)',
           },
           [disabledSelector]: {
             opacity: 0.35,
