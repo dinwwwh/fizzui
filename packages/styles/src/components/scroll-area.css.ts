@@ -11,6 +11,13 @@ export const scrollAreaRoot = recipe({
   variants: {},
 })
 
+export const scrollAreaViewport = recipe({
+  base: {
+    width: '100%',
+  },
+  variants: {},
+})
+
 export const scrollAreaBar = recipe({
   base: {
     display: 'flex',
