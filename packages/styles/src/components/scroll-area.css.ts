@@ -23,7 +23,7 @@ export const scrollAreaBar = recipe({
     display: 'flex',
     touchAction: 'none',
     userSelect: 'none',
-    borderRadius: vars.border.radius.full,
+    borderRadius: vars.radius.full,
 
     transitionProperty: 'width, height',
     transitionTimingFunction: 'cubic-bezier(0.4, 0, 0.2, 1)',
@@ -33,7 +33,7 @@ export const scrollAreaBar = recipe({
 
     selectors: {
       [hoverSelector]: {
-        backgroundColor: vars.bg.gray[100],
+        backgroundColor: vars.bg.base[100],
       },
       '&[data-orientation="horizontal"]': {
         flexDirection: 'column',
@@ -58,8 +58,8 @@ export const scrollAreaThumb = recipe({
   base: {
     'position': 'relative',
     'flex': '1 1 0%',
-    'borderRadius': vars.border.radius.full,
-    'backgroundColor': vars.bg.gray[300],
+    'borderRadius': vars.radius.full,
+    'backgroundColor': vars.bg.base[300],
 
     '::before': {
       position: 'absolute',

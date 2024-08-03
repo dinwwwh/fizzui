@@ -23,13 +23,13 @@ export const sliderRoot = recipe({
       md: {},
     },
     color: {
-      default: {},
+      base: {},
     },
   },
 
   defaultVariants: {
     size: 'md',
-    color: 'default',
+    color: 'base',
   },
 })
 
@@ -41,14 +41,14 @@ export const sliderTrack = recipe({
   variants: {
     size: {
       md: {
-        borderRadius: vars.border.radius.full,
+        borderRadius: vars.radius.full,
         height: rem(6),
         width: rem(320),
       },
     },
     color: {
-      default: {
-        backgroundColor: vars.bg.gray[200],
+      base: {
+        backgroundColor: vars.bg.base[200],
 
         [disabledSelector]: {
           opacity: 0.35,
@@ -59,7 +59,7 @@ export const sliderTrack = recipe({
 
   defaultVariants: {
     size: 'md',
-    color: 'default',
+    color: 'base',
   },
 })
 
@@ -71,20 +71,20 @@ export const sliderRange = recipe({
   variants: {
     size: {
       md: {
-        borderRadius: vars.border.radius.full,
+        borderRadius: vars.radius.full,
         height: '100%',
       },
     },
     color: {
-      default: {
-        backgroundColor: vars.bg.gray[800],
+      base: {
+        backgroundColor: vars.bg.base[800],
       },
     },
   },
 
   defaultVariants: {
     size: 'md',
-    color: 'default',
+    color: 'base',
   },
 })
 
@@ -112,7 +112,7 @@ export const sliderThumb = recipe({
   variants: {
     size: {
       md: {
-        borderRadius: vars.border.radius.full,
+        borderRadius: vars.radius.full,
         width: rem(16),
         height: rem(16),
 
@@ -120,18 +120,18 @@ export const sliderThumb = recipe({
       },
     },
     color: {
-      default: {
-        backgroundColor: vars.fg.gray[0],
-        borderColor: vars.fg.gray[800],
+      base: {
+        backgroundColor: vars.fg.base[0],
+        borderColor: vars.fg.base[800],
 
         selectors: {
           [focusVisibleSelector]: {
-            outline: `${rem(1)} solid ${vars.fg.gray[800]}`,
+            outline: `${rem(1)} solid ${vars.fg.base[800]}`,
             outlineOffset: rem(1),
           },
           [disabledSelector]: {
-            backgroundColor: vars.fg.gray[200],
-            borderColor: vars.fg.gray[500],
+            backgroundColor: vars.fg.base[200],
+            borderColor: vars.fg.base[500],
           },
         },
       },
@@ -140,6 +140,6 @@ export const sliderThumb = recipe({
 
   defaultVariants: {
     size: 'md',
-    color: 'default',
+    color: 'base',
   },
 })

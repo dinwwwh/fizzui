@@ -4,10 +4,10 @@ import { disabledSelector, rem } from '@styles/utils'
 
 export const selectRoot = recipe({
   base: {
-    color: vars.fg.gray[950],
-    backgroundColor: vars.bg.gray[0],
+    color: vars.fg.base[950],
+    backgroundColor: vars.bg.base[0],
     overflow: 'hidden',
-    borderRadius: vars.border.radius.md,
+    borderRadius: vars.radius.md,
     boxShadow: vars.shadow.md,
   },
 
@@ -29,7 +29,7 @@ export const selectItem = recipe({
 
     height: rem(28),
     padding: `0 ${rem(24)}`,
-    borderRadius: vars.border.radius.md,
+    borderRadius: vars.radius.md,
 
     position: 'relative',
     userSelect: 'none',
@@ -37,12 +37,12 @@ export const selectItem = recipe({
 
     selectors: {
       '&[data-state="checked"]': {
-        backgroundColor: vars.bg.gray[50],
+        backgroundColor: vars.bg.base[50],
       },
 
       '&[data-highlighted]': {
         outline: 'none',
-        backgroundColor: vars.bg.gray[100],
+        backgroundColor: vars.bg.base[100],
       },
 
       [disabledSelector]: {
@@ -63,7 +63,7 @@ export const selectItemIndicator = recipe({
     left: rem(6),
     top: '50%',
     transform: 'translateY(-50%)',
-    color: vars.fg.gray[600],
+    color: vars.fg.base[600],
   },
 
   variants: {},
@@ -75,7 +75,7 @@ export const selectScrollButton = recipe({
     alignItems: 'center',
     justifyContent: 'center',
     height: rem(26),
-    color: vars.fg.gray[500],
+    color: vars.fg.base[500],
   },
   variants: {},
 })
@@ -101,7 +101,7 @@ export const selectLabel = recipe({
 
 export const selectSeparator = recipe({
   base: {
-    borderColor: vars.bg.gray[100],
+    borderColor: vars.bg.base[100],
     borderBottomWidth: rem(1),
     margin: `${rem(4)} ${rem(-6)}`,
   },

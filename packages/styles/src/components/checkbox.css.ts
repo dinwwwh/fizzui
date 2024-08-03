@@ -23,25 +23,25 @@ export const checkboxRoot = recipe({
         height: rem(16),
         width: rem(16),
         borderWidth: rem(1),
-        borderRadius: vars.border.radius.sm,
+        borderRadius: vars.radius.sm,
       },
     },
     color: {
-      default: {
-        color: vars.fg.gray[0],
-        borderColor: vars.border.gray[300],
+      base: {
+        color: vars.fg.base[0],
+        borderColor: vars.border.base[300],
 
         willChange: 'background-color, border-color',
         transition: 'background-color 0.2s ease-in-out, border-color 0.2s ease-in-out',
 
         selectors: {
           '&[data-state="checked"]': {
-            backgroundColor: vars.bg.gray[900],
-            borderColor: vars.bg.gray[900],
+            backgroundColor: vars.bg.base[900],
+            borderColor: vars.bg.base[900],
           },
 
           [focusVisibleSelector]: {
-            outline: `${rem(2)} solid ${vars.fg.gray[800]}`,
+            outline: `${rem(2)} solid ${vars.fg.base[800]}`,
             outlineOffset: rem(2),
           },
 
@@ -55,7 +55,7 @@ export const checkboxRoot = recipe({
 
   defaultVariants: {
     size: 'md',
-    color: 'default',
+    color: 'base',
   },
 })
 

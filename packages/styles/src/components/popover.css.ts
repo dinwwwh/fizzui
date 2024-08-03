@@ -5,13 +5,13 @@ import { rem } from '@styles/utils'
 
 export const popoverRoot = recipe({
   base: {
-    color: vars.fg.gray[950],
-    backgroundColor: vars.bg.gray[0],
+    color: vars.fg.base[950],
+    backgroundColor: vars.bg.base[0],
     maxWidth: rem(320),
     padding: rem(4),
 
     borderWidth: rem(1),
-    borderRadius: vars.border.radius.md,
+    borderRadius: vars.radius.md,
     boxShadow: vars.shadow.md,
 
     zIndex: 50,

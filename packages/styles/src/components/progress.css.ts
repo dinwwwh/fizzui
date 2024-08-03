@@ -10,21 +10,21 @@ export const progressRoot = recipe({
   variants: {
     size: {
       md: {
-        borderRadius: vars.border.radius.full,
+        borderRadius: vars.radius.full,
         height: rem(6),
         width: rem(320),
       },
     },
     color: {
-      default: {
-        backgroundColor: vars.bg.gray[200],
+      base: {
+        backgroundColor: vars.bg.base[200],
       },
     },
   },
 
   defaultVariants: {
     size: 'md',
-    color: 'default',
+    color: 'base',
   },
 })
 
@@ -42,14 +42,14 @@ export const progressIndicator = recipe({
       },
     },
     color: {
-      default: {
-        backgroundColor: vars.fg.gray[800],
+      base: {
+        backgroundColor: vars.fg.base[800],
       },
     },
   },
 
   defaultVariants: {
     size: 'md',
-    color: 'default',
+    color: 'base',
   },
 })

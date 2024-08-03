@@ -1,6 +1,6 @@
 import { DemoContainer, DemoFlexRow } from '@content/components/demo'
 import { inputGroup } from '@fizzui/styles'
-import { IconCopy, IconCreditCard, IconEdit, IconHelp, IconLink, IconMail, IconQuestionMark } from '@tabler/icons-react'
+import { IconCopy, IconCreditCard, IconEdit, IconHelp, IconLink, IconMail } from '@tabler/icons-react'
 import { createFileRoute } from '@tanstack/react-router'
 
 export const Route = createFileRoute('/demos/input-group')({

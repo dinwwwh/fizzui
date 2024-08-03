@@ -11,27 +11,27 @@ export const badgeGroupRoot = recipe({
   variants: {
     size: {
       sm: {
-        borderRadius: vars.border.radius.full,
+        borderRadius: vars.radius.full,
         padding: rem(4),
         columnGap: rem(2),
       },
       md: {
-        borderRadius: vars.border.radius.full,
+        borderRadius: vars.radius.full,
         padding: rem(4),
         columnGap: rem(4),
       },
     },
 
     color: {
-      default: {
-        backgroundColor: vars.bg.gray[100],
+      base: {
+        backgroundColor: vars.bg.base[100],
       },
     },
   },
 
   defaultVariants: {
     size: 'md',
-    color: 'default',
+    color: 'base',
   },
 })
 
@@ -57,15 +57,15 @@ export const badgeGroupContent = recipe({
       },
     },
     color: {
-      default: {
-        color: vars.fg.gray[700],
+      base: {
+        color: vars.fg.base[700],
       },
     },
   },
 
   defaultVariants: {
     size: 'md',
-    color: 'default',
+    color: 'base',
   },
 })
 

@@ -38,28 +38,23 @@ const colors = {
 
 export const vars = createGlobalThemeContract({
   bg: {
-    gray: mapValues(colors.zinc, (_, key) => `bg-gray-${key}`),
+    base: mapValues(colors.zinc, (_, key) => `bg-base-${key}`),
     danger: mapValues(colors.red, (_, key) => `bg-danger-${key}`),
   },
+
   fg: {
-    gray: mapValues(colors.zinc, (_, key) => `fg-gray-${key}`),
+    base: mapValues(colors.zinc, (_, key) => `fg-base-${key}`),
     danger: mapValues(colors.red, (_, key) => `fg-danger-${key}`),
   },
-  border: {
-    gray: {
-      100: 'border-gray-100',
-      200: 'border-gray-200',
-      300: 'border-gray-300',
-    },
 
-    radius: {
-      none: 'border-radius-none',
-      sm: 'border-radius-sm',
-      md: 'border-radius-md',
-      lg: 'border-radius-lg',
-      full: 'border-radius-full',
+  border: {
+    base: {
+      100: 'border-base-100',
+      200: 'border-base-200',
+      300: 'border-base-300',
     },
   },
+
   shadow: {
     'xs': 'shadow-xs',
     'sm': 'shadow-sm',
@@ -69,30 +64,32 @@ export const vars = createGlobalThemeContract({
     '2xl': 'shadow-2xl',
     'inner': 'shadow-inner',
   },
+
+  radius: {
+    none: 'radius-none',
+    sm: 'radius-sm',
+    md: 'radius-md',
+    lg: 'radius-lg',
+    full: 'radius-full',
+  },
 }, value => `fizzui-${value}`)
 
 createGlobalTheme(':root', vars, {
   bg: {
-    gray: colors.zinc,
+    base: colors.zinc,
     danger: colors.red,
   },
+
   fg: {
-    gray: colors.zinc,
+    base: colors.zinc,
     danger: colors.red,
   },
+
   border: {
-    gray: {
+    base: {
       100: colors.zinc[100],
       200: colors.zinc[200],
       300: colors.zinc[300],
-    },
-
-    radius: {
-      none: '0px',
-      sm: rem(4),
-      md: rem(6),
-      lg: rem(8),
-      full: '9999px',
     },
   },
 
@@ -104,5 +101,13 @@ createGlobalTheme(':root', vars, {
     'xl': '0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1)',
     '2xl': '0 25px 50px -12px rgb(0 0 0 / 0.25)',
     'inner': 'inset 0 2px 4px 0 rgb(0 0 0 / 0.05)',
+  },
+
+  radius: {
+    none: '0px',
+    sm: rem(4),
+    md: rem(6),
+    lg: rem(8),
+    full: '9999px',
   },
 })

@@ -9,7 +9,7 @@ export const toggleSwitchRoot = recipe({
     height: rem(20),
     width: rem(36),
 
-    borderRadius: vars.border.radius.full,
+    borderRadius: vars.radius.full,
 
     willChange: 'background-color',
     transition: 'background-color 0.2s ease-in-out',
@@ -25,12 +25,12 @@ export const toggleSwitchRoot = recipe({
 
   variants: {
     color: {
-      default: {
-        backgroundColor: vars.bg.gray[200],
+      base: {
+        backgroundColor: vars.bg.base[200],
 
         selectors: {
           '&[data-state="checked"]': {
-            backgroundColor: vars.fg.gray[900],
+            backgroundColor: vars.fg.base[900],
           },
 
           [disabledSelector]: {
@@ -38,7 +38,7 @@ export const toggleSwitchRoot = recipe({
           },
 
           [focusVisibleSelector]: {
-            outline: `${rem(2)} solid ${vars.fg.gray[800]}`,
+            outline: `${rem(2)} solid ${vars.fg.base[800]}`,
             outlineOffset: rem(2),
           },
         },
@@ -47,7 +47,7 @@ export const toggleSwitchRoot = recipe({
   },
 
   defaultVariants: {
-    color: 'default',
+    color: 'base',
   },
 })
 
@@ -59,7 +59,7 @@ export const toggleSwitchThumb = recipe({
     height: rem(16),
     width: rem(16),
 
-    borderRadius: vars.border.radius.full,
+    borderRadius: vars.radius.full,
     boxShadow: vars.shadow.sm,
 
     willChange: 'transform',
@@ -74,13 +74,13 @@ export const toggleSwitchThumb = recipe({
 
   variants: {
     color: {
-      default: {
-        backgroundColor: vars.fg.gray[0],
+      base: {
+        backgroundColor: vars.fg.base[0],
       },
     },
   },
 
   defaultVariants: {
-    color: 'default',
+    color: 'base',
   },
 })

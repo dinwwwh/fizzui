@@ -36,20 +36,20 @@ export const tooltipRoot = recipe({
         maxWidth: rem(320),
         fontWeight: 500,
         boxShadow: vars.shadow.lg,
-        borderRadius: vars.border.radius.lg,
+        borderRadius: vars.radius.lg,
       },
     },
     color: {
-      default: {
-        backgroundColor: vars.bg.gray[900],
-        color: vars.fg.gray[0],
+      base: {
+        backgroundColor: vars.bg.base[900],
+        color: vars.fg.base[0],
       },
     },
   },
 
   defaultVariants: {
     size: 'md',
-    color: 'default',
+    color: 'base',
   },
 })
 
@@ -61,15 +61,15 @@ export const tooltipArrow = recipe({
       md: {},
     },
     color: {
-      default: {
-        fill: vars.bg.gray[900],
+      base: {
+        fill: vars.bg.base[900],
       },
     },
   },
 
   defaultVariants: {
     size: 'md',
-    color: 'default',
+    color: 'base',
   },
 })
 
@@ -83,14 +83,14 @@ export const tooltipSub = recipe({
       },
     },
     color: {
-      default: {
-        color: vars.fg.gray[300],
+      base: {
+        color: vars.fg.base[300],
       },
     },
   },
 
   defaultVariants: {
     size: 'md',
-    color: 'default',
+    color: 'base',
   },
 })

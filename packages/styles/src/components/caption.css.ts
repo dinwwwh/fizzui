@@ -4,7 +4,7 @@ import { rem } from '@styles/utils'
 
 export const captionRoot = recipe({
   base: {
-    color: vars.fg.gray[700],
+    color: vars.fg.base[700],
   },
 
   variants: {

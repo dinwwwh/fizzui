@@ -1,6 +1,6 @@
 import { recipe } from '@styles/lib'
 import { vars } from '@styles/themes.css'
-import { disabledSelector, disabledWithinSelector, focusVisibleUserInvalidWithinSelector, focusVisibleWithinSelector, rem, userInvalidSelector, userInvalidWithinSelector } from '@styles/utils'
+import { disabledSelector, disabledWithinSelector, focusVisibleUserInvalidWithinSelector, focusVisibleWithinSelector, rem, userInvalidWithinSelector } from '@styles/utils'
 
 export const inputGroupRoot = recipe({
   base: {
@@ -14,28 +14,28 @@ export const inputGroupRoot = recipe({
         height: rem(36),
         borderWidth: rem(1),
         fontSize: rem(14),
-        borderRadius: vars.border.radius.lg,
+        borderRadius: vars.radius.lg,
         padding: `0 ${rem(12)}`,
         columnGap: rem(8),
       },
     },
     color: {
-      default: {
-        color: vars.fg.gray[900],
-        backgroundColor: vars.bg.gray[0],
-        borderColor: vars.border.gray[300],
+      base: {
+        color: vars.fg.base[900],
+        backgroundColor: vars.bg.base[0],
+        borderColor: vars.border.base[300],
         boxShadow: vars.shadow.xs,
 
         selectors: {
           [disabledWithinSelector]: {
-            color: vars.fg.gray[500],
-            backgroundColor: vars.bg.gray[50],
+            color: vars.fg.base[500],
+            backgroundColor: vars.bg.base[50],
             cursor: 'not-allowed',
           },
 
           [focusVisibleWithinSelector]: {
-            outline: `${rem(1)} solid ${vars.fg.gray[700]}`,
-            borderColor: vars.fg.gray[700],
+            outline: `${rem(1)} solid ${vars.fg.base[700]}`,
+            borderColor: vars.fg.base[700],
           },
 
           [userInvalidWithinSelector]: {
@@ -53,7 +53,7 @@ export const inputGroupRoot = recipe({
 
   defaultVariants: {
     size: 'md',
-    color: 'default',
+    color: 'base',
   },
 })
 
@@ -74,9 +74,9 @@ export const inputGroupInput = recipe({
       md: {},
     },
     color: {
-      default: {
+      base: {
         '::placeholder': {
-          color: vars.fg.gray[500],
+          color: vars.fg.base[500],
         },
       },
     },
@@ -84,7 +84,7 @@ export const inputGroupInput = recipe({
 
   defaultVariants: {
     size: 'md',
-    color: 'default',
+    color: 'base',
   },
 })
 
@@ -102,8 +102,8 @@ export const inputGroupIcon = recipe({
       false: {},
     },
     color: {
-      default: {
-        color: vars.fg.gray[500],
+      base: {
+        color: vars.fg.base[500],
       },
     },
   },
@@ -127,7 +127,7 @@ export const inputGroupIcon = recipe({
 
   defaultVariants: {
     size: 'md',
-    color: 'default',
+    color: 'base',
     sub: false,
   },
 })
@@ -140,14 +140,14 @@ export const inputGroupSeparator = recipe({
 
   variants: {
     color: {
-      default: {
-        backgroundColor: vars.bg.gray[300],
+      base: {
+        backgroundColor: vars.bg.base[300],
       },
     },
   },
 
   defaultVariants: {
-    color: 'default',
+    color: 'base',
   },
 })
 

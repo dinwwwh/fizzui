@@ -4,7 +4,7 @@ import { rem } from '@styles/utils'
 
 export const displayRoot = recipe({
   base: {
-    color: vars.fg.gray[950],
+    color: vars.fg.base[950],
     fontWeight: 700,
   },
 

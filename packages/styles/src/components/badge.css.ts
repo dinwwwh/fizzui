@@ -17,7 +17,7 @@ export const badgeRoot = recipe({
         padding: `0 ${rem(8)}`,
         fontSize: rem(12),
         fontWeight: 500,
-        borderRadius: vars.border.radius.full,
+        borderRadius: vars.radius.full,
         columnGap: rem(4),
       },
       md: {
@@ -25,15 +25,15 @@ export const badgeRoot = recipe({
         padding: `0 ${rem(10)}`,
         fontSize: rem(14),
         fontWeight: 500,
-        borderRadius: vars.border.radius.full,
+        borderRadius: vars.radius.full,
         columnGap: rem(5),
       },
     },
 
     color: {
-      default: {
-        color: vars.fg.gray[700],
-        backgroundColor: vars.bg.gray[50],
+      base: {
+        color: vars.fg.base[700],
+        backgroundColor: vars.bg.base[50],
       },
     },
 
@@ -61,7 +61,7 @@ export const badgeRoot = recipe({
 
   defaultVariants: {
     size: 'md',
-    color: 'default',
+    color: 'base',
   },
 })
 

@@ -27,7 +27,7 @@ export const buttonRoot = recipe({
         height: rem(28),
         padding: `0 ${rem(10)}`,
         borderWidth: rem(0.5),
-        borderRadius: vars.border.radius.md,
+        borderRadius: vars.radius.md,
         fontSize: rem(12),
         fontWeight: 500,
         columnGap: rem(4),
@@ -35,7 +35,7 @@ export const buttonRoot = recipe({
       md: {
         height: rem(36),
         padding: `0 ${rem(16)}`,
-        borderRadius: vars.border.radius.lg,
+        borderRadius: vars.radius.lg,
         borderWidth: rem(0.5),
         fontSize: rem(14),
         fontWeight: 500,
@@ -48,10 +48,10 @@ export const buttonRoot = recipe({
       ghost: {},
     },
     color: {
-      default: {
+      base: {
         selectors: {
           [focusVisibleSelector]: {
-            outline: `${rem(2)} solid ${vars.fg.gray[800]}`,
+            outline: `${rem(2)} solid ${vars.fg.base[800]}`,
             outlineOffset: rem(2),
           },
         },
@@ -64,16 +64,16 @@ export const buttonRoot = recipe({
 
   compoundVariants: [
     {
-      variants: { variant: 'solid', color: 'default' },
+      variants: { variant: 'solid', color: 'base' },
       style: {
-        backgroundColor: vars.bg.gray[950],
-        backgroundImage: `linear-gradient(to bottom, ${vars.bg.gray[800]}, ${vars.bg.gray[950]})`,
-        color: vars.fg.gray[50],
-        borderColor: vars.bg.gray[950],
+        backgroundColor: vars.bg.base[950],
+        backgroundImage: `linear-gradient(to bottom, ${vars.bg.base[800]}, ${vars.bg.base[950]})`,
+        color: vars.fg.base[50],
+        borderColor: vars.bg.base[950],
 
         selectors: {
           [enabledSelector]: {
-            boxShadow: `rgba(255, 255, 255, 0.25) 0px 1px 0px 0px inset, ${vars.border.gray[200]} 0px 0px 0px 1px`,
+            boxShadow: `rgba(255, 255, 255, 0.25) 0px 1px 0px 0px inset, ${vars.border.base[200]} 0px 0px 0px 1px`,
           },
           [hoverSelector]: {
             filter: 'brightness(1.1)',
@@ -88,17 +88,17 @@ export const buttonRoot = recipe({
       },
     },
     {
-      variants: { variant: 'outline', color: 'default' },
+      variants: { variant: 'outline', color: 'base' },
       style: {
         backgroundColor: 'transparent',
         borderWidth: rem(1),
         boxShadow: 'none',
-        color: vars.fg.gray[800],
+        color: vars.fg.base[800],
 
         selectors: {
           [hoverSelector]: {
-            backgroundColor: vars.bg.gray[100],
-            color: vars.fg.gray[700],
+            backgroundColor: vars.bg.base[100],
+            color: vars.fg.base[700],
           },
           [pressedSelector]: {
             filter: 'brightness(0.95)',
@@ -110,17 +110,17 @@ export const buttonRoot = recipe({
       },
     },
     {
-      variants: { variant: 'ghost', color: 'default' },
+      variants: { variant: 'ghost', color: 'base' },
       style: {
         backgroundColor: 'transparent',
         borderWidth: 0,
         boxShadow: 'none',
-        color: vars.fg.gray[800],
+        color: vars.fg.base[800],
 
         selectors: {
           [hoverSelector]: {
-            backgroundColor: vars.bg.gray[100],
-            color: vars.fg.gray[700],
+            backgroundColor: vars.bg.base[100],
+            color: vars.fg.base[700],
           },
           [pressedSelector]: {
             filter: 'brightness(0.95)',
@@ -150,7 +150,7 @@ export const buttonRoot = recipe({
   defaultVariants: {
     size: 'md',
     variant: 'solid',
-    color: 'default',
+    color: 'base',
   },
 })
 

@@ -10,10 +10,10 @@ export const buttonGroupRoot = recipe({
   variants: {
     size: {
       sm: {
-        borderRadius: vars.border.radius.md,
+        borderRadius: vars.radius.md,
       },
       md: {
-        borderRadius: vars.border.radius.lg,
+        borderRadius: vars.radius.lg,
       },
     },
   },
@@ -44,7 +44,7 @@ export const buttonGroupItem = recipe({
       [focusVisibleSelector]: {
         zIndex: 1,
         outline: 'none',
-        borderColor: vars.fg.gray[800],
+        borderColor: vars.fg.base[800],
       },
     },
   },
