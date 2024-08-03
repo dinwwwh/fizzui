@@ -16,6 +16,7 @@ import { Route as DemosTooltipImport } from './routes/demos/tooltip'
 import { Route as DemosToggleImport } from './routes/demos/toggle'
 import { Route as DemosSwitcherImport } from './routes/demos/switcher'
 import { Route as DemosSliderImport } from './routes/demos/slider'
+import { Route as DemosSeparatorImport } from './routes/demos/separator'
 import { Route as DemosSelectImport } from './routes/demos/select'
 import { Route as DemosProgressImport } from './routes/demos/progress'
 import { Route as DemosPopoverImport } from './routes/demos/popover'
@@ -51,6 +52,11 @@ const DemosSwitcherRoute = DemosSwitcherImport.update({
 
 const DemosSliderRoute = DemosSliderImport.update({
   path: '/demos/slider',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const DemosSeparatorRoute = DemosSeparatorImport.update({
+  path: '/demos/separator',
   getParentRoute: () => rootRoute,
 } as any)
 
@@ -178,6 +184,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DemosSelectImport
       parentRoute: typeof rootRoute
     }
+    '/demos/separator': {
+      id: '/demos/separator'
+      path: '/demos/separator'
+      fullPath: '/demos/separator'
+      preLoaderRoute: typeof DemosSeparatorImport
+      parentRoute: typeof rootRoute
+    }
     '/demos/slider': {
       id: '/demos/slider'
       path: '/demos/slider'
@@ -229,6 +242,7 @@ export const routeTree = rootRoute.addChildren({
   DemosPopoverRoute,
   DemosProgressRoute,
   DemosSelectRoute,
+  DemosSeparatorRoute,
   DemosSliderRoute,
   DemosSwitcherRoute,
   DemosToggleRoute,
@@ -254,6 +268,7 @@ export const routeTree = rootRoute.addChildren({
         "/demos/popover",
         "/demos/progress",
         "/demos/select",
+        "/demos/separator",
         "/demos/slider",
         "/demos/switcher",
         "/demos/toggle",
@@ -290,6 +305,9 @@ export const routeTree = rootRoute.addChildren({
     },
     "/demos/select": {
       "filePath": "demos/select.tsx"
+    },
+    "/demos/separator": {
+      "filePath": "demos/separator.tsx"
     },
     "/demos/slider": {
       "filePath": "demos/slider.tsx"
