@@ -18,6 +18,7 @@ import { Route as DemosSliderImport } from './routes/demos/slider'
 import { Route as DemosSelectImport } from './routes/demos/select'
 import { Route as DemosProgressImport } from './routes/demos/progress'
 import { Route as DemosPopoverImport } from './routes/demos/popover'
+import { Route as DemosInputGroupImport } from './routes/demos/input-group'
 import { Route as DemosInputImport } from './routes/demos/input'
 import { Route as DemosCheckboxImport } from './routes/demos/checkbox'
 import { Route as DemosButtonGroupImport } from './routes/demos/button-group'
@@ -59,6 +60,11 @@ const DemosProgressRoute = DemosProgressImport.update({
 
 const DemosPopoverRoute = DemosPopoverImport.update({
   path: '/demos/popover',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const DemosInputGroupRoute = DemosInputGroupImport.update({
+  path: '/demos/input-group',
   getParentRoute: () => rootRoute,
 } as any)
 
@@ -138,6 +144,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DemosInputImport
       parentRoute: typeof rootRoute
     }
+    '/demos/input-group': {
+      id: '/demos/input-group'
+      path: '/demos/input-group'
+      fullPath: '/demos/input-group'
+      preLoaderRoute: typeof DemosInputGroupImport
+      parentRoute: typeof rootRoute
+    }
     '/demos/popover': {
       id: '/demos/popover'
       path: '/demos/popover'
@@ -199,6 +212,7 @@ export const routeTree = rootRoute.addChildren({
   DemosButtonGroupRoute,
   DemosCheckboxRoute,
   DemosInputRoute,
+  DemosInputGroupRoute,
   DemosPopoverRoute,
   DemosProgressRoute,
   DemosSelectRoute,
@@ -222,6 +236,7 @@ export const routeTree = rootRoute.addChildren({
         "/demos/button-group",
         "/demos/checkbox",
         "/demos/input",
+        "/demos/input-group",
         "/demos/popover",
         "/demos/progress",
         "/demos/select",
@@ -248,6 +263,9 @@ export const routeTree = rootRoute.addChildren({
     },
     "/demos/input": {
       "filePath": "demos/input.tsx"
+    },
+    "/demos/input-group": {
+      "filePath": "demos/input-group.tsx"
     },
     "/demos/popover": {
       "filePath": "demos/popover.tsx"

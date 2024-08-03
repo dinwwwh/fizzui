@@ -4,13 +4,13 @@ import { disabledSelector, focusVisibleSelector, rem } from '@styles/utils'
 
 export const inputRoot = recipe({
   base: {
-    color: vars.fg.gray[950],
+    'color': vars.fg.gray[950],
 
-    selectors: {
-      '&:placeholder': {
-        color: vars.fg.gray[300],
-      },
+    '::placeholder': {
+      color: vars.fg.gray[300],
+    },
 
+    'selectors': {
       [disabledSelector]: {
         color: vars.fg.gray[500],
         backgroundColor: vars.bg.gray[50],

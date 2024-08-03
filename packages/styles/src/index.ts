@@ -1,5 +1,6 @@
 export { button } from './components/button'
 export { input } from './components/input'
+export { inputGroup } from './components/input-group'
 export { popover } from './components/popover'
 export { select } from './components/select'
 export { scrollArea } from './components/scroll-area'
