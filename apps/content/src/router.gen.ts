@@ -20,8 +20,10 @@ import { Route as DemosSeparatorImport } from './routes/demos/separator'
 import { Route as DemosSelectImport } from './routes/demos/select'
 import { Route as DemosProgressImport } from './routes/demos/progress'
 import { Route as DemosPopoverImport } from './routes/demos/popover'
+import { Route as DemosKbdImport } from './routes/demos/kbd'
 import { Route as DemosInputGroupImport } from './routes/demos/input-group'
 import { Route as DemosInputImport } from './routes/demos/input'
+import { Route as DemosCodeImport } from './routes/demos/code'
 import { Route as DemosCheckboxImport } from './routes/demos/checkbox'
 import { Route as DemosButtonGroupImport } from './routes/demos/button-group'
 import { Route as DemosButtonImport } from './routes/demos/button'
@@ -75,6 +77,11 @@ const DemosPopoverRoute = DemosPopoverImport.update({
   getParentRoute: () => rootRoute,
 } as any)
 
+const DemosKbdRoute = DemosKbdImport.update({
+  path: '/demos/kbd',
+  getParentRoute: () => rootRoute,
+} as any)
+
 const DemosInputGroupRoute = DemosInputGroupImport.update({
   path: '/demos/input-group',
   getParentRoute: () => rootRoute,
@@ -82,6 +89,11 @@ const DemosInputGroupRoute = DemosInputGroupImport.update({
 
 const DemosInputRoute = DemosInputImport.update({
   path: '/demos/input',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const DemosCodeRoute = DemosCodeImport.update({
+  path: '/demos/code',
   getParentRoute: () => rootRoute,
 } as any)
 
@@ -149,6 +161,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DemosCheckboxImport
       parentRoute: typeof rootRoute
     }
+    '/demos/code': {
+      id: '/demos/code'
+      path: '/demos/code'
+      fullPath: '/demos/code'
+      preLoaderRoute: typeof DemosCodeImport
+      parentRoute: typeof rootRoute
+    }
     '/demos/input': {
       id: '/demos/input'
       path: '/demos/input'
@@ -161,6 +180,13 @@ declare module '@tanstack/react-router' {
       path: '/demos/input-group'
       fullPath: '/demos/input-group'
       preLoaderRoute: typeof DemosInputGroupImport
+      parentRoute: typeof rootRoute
+    }
+    '/demos/kbd': {
+      id: '/demos/kbd'
+      path: '/demos/kbd'
+      fullPath: '/demos/kbd'
+      preLoaderRoute: typeof DemosKbdImport
       parentRoute: typeof rootRoute
     }
     '/demos/popover': {
@@ -237,8 +263,10 @@ export const routeTree = rootRoute.addChildren({
   DemosButtonRoute,
   DemosButtonGroupRoute,
   DemosCheckboxRoute,
+  DemosCodeRoute,
   DemosInputRoute,
   DemosInputGroupRoute,
+  DemosKbdRoute,
   DemosPopoverRoute,
   DemosProgressRoute,
   DemosSelectRoute,
@@ -263,8 +291,10 @@ export const routeTree = rootRoute.addChildren({
         "/demos/button",
         "/demos/button-group",
         "/demos/checkbox",
+        "/demos/code",
         "/demos/input",
         "/demos/input-group",
+        "/demos/kbd",
         "/demos/popover",
         "/demos/progress",
         "/demos/select",
@@ -291,11 +321,17 @@ export const routeTree = rootRoute.addChildren({
     "/demos/checkbox": {
       "filePath": "demos/checkbox.tsx"
     },
+    "/demos/code": {
+      "filePath": "demos/code.tsx"
+    },
     "/demos/input": {
       "filePath": "demos/input.tsx"
     },
     "/demos/input-group": {
       "filePath": "demos/input-group.tsx"
+    },
+    "/demos/kbd": {
+      "filePath": "demos/kbd.tsx"
     },
     "/demos/popover": {
       "filePath": "demos/popover.tsx"

@@ -3,3 +3,11 @@ body {
   color: red;
   margin: 0;
 }
+
+pre,
+code,
+kbd,
+samp {
+  /* TODO: remove !important */
+  font-family: monospace !important;
+}
