@@ -1,6 +1,6 @@
 import { recipe } from '@styles/lib'
 import { vars } from '@styles/themes.css'
-import { disabledSelector, disabledWithinSelector, focusVisibleWithinSelector, rem } from '@styles/utils'
+import { disabledSelector, disabledWithinSelector, focusVisibleUserInvalidWithinSelector, focusVisibleWithinSelector, rem, userInvalidSelector, userInvalidWithinSelector } from '@styles/utils'
 
 export const inputGroupRoot = recipe({
   base: {
@@ -36,6 +36,15 @@ export const inputGroupRoot = recipe({
           [focusVisibleWithinSelector]: {
             outline: `${rem(1)} solid ${vars.fg.gray[700]}`,
             borderColor: vars.fg.gray[700],
+          },
+
+          [userInvalidWithinSelector]: {
+            borderColor: vars.fg.danger[300],
+          },
+
+          [focusVisibleUserInvalidWithinSelector]: {
+            outline: `${rem(1)} solid ${vars.fg.danger[500]}`,
+            borderColor: vars.fg.danger[500],
           },
         },
       },

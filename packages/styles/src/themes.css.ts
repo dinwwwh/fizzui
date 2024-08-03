@@ -21,14 +21,29 @@ const colors = {
     950: '#09090b',
     1000: '#000000',
   },
+  red: {
+    50: '#fef2f2',
+    100: '#fee2e2',
+    200: '#fecaca',
+    300: '#fca5a5',
+    400: '#f87171',
+    500: '#ef4444',
+    600: '#dc2626',
+    700: '#b91c1c',
+    800: '#991b1b',
+    900: '#7f1d1d',
+    950: '#450a0a',
+  },
 }
 
 export const vars = createGlobalThemeContract({
   bg: {
     gray: mapValues(colors.zinc, (_, key) => `bg-gray-${key}`),
+    danger: mapValues(colors.red, (_, key) => `bg-danger-${key}`),
   },
   fg: {
     gray: mapValues(colors.zinc, (_, key) => `fg-gray-${key}`),
+    danger: mapValues(colors.red, (_, key) => `fg-danger-${key}`),
   },
   border: {
     gray: {
@@ -59,9 +74,11 @@ export const vars = createGlobalThemeContract({
 createGlobalTheme(':root', vars, {
   bg: {
     gray: colors.zinc,
+    danger: colors.red,
   },
   fg: {
     gray: colors.zinc,
+    danger: colors.red,
   },
   border: {
     gray: {
