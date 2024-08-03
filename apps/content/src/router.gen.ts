@@ -13,6 +13,7 @@
 import { Route as rootRoute } from './routes/__root'
 import { Route as DemosTypographyImport } from './routes/demos/typography'
 import { Route as DemosToggleSwitchImport } from './routes/demos/toggle-switch'
+import { Route as DemosSliderImport } from './routes/demos/slider'
 import { Route as DemosSelectImport } from './routes/demos/select'
 import { Route as DemosPopoverImport } from './routes/demos/popover'
 import { Route as DemosInputImport } from './routes/demos/input'
@@ -31,6 +32,11 @@ const DemosTypographyRoute = DemosTypographyImport.update({
 
 const DemosToggleSwitchRoute = DemosToggleSwitchImport.update({
   path: '/demos/toggle-switch',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const DemosSliderRoute = DemosSliderImport.update({
+  path: '/demos/slider',
   getParentRoute: () => rootRoute,
 } as any)
 
@@ -134,6 +140,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DemosSelectImport
       parentRoute: typeof rootRoute
     }
+    '/demos/slider': {
+      id: '/demos/slider'
+      path: '/demos/slider'
+      fullPath: '/demos/slider'
+      preLoaderRoute: typeof DemosSliderImport
+      parentRoute: typeof rootRoute
+    }
     '/demos/toggle-switch': {
       id: '/demos/toggle-switch'
       path: '/demos/toggle-switch'
@@ -162,6 +175,7 @@ export const routeTree = rootRoute.addChildren({
   DemosInputRoute,
   DemosPopoverRoute,
   DemosSelectRoute,
+  DemosSliderRoute,
   DemosToggleSwitchRoute,
   DemosTypographyRoute,
 })
@@ -182,6 +196,7 @@ export const routeTree = rootRoute.addChildren({
         "/demos/input",
         "/demos/popover",
         "/demos/select",
+        "/demos/slider",
         "/demos/toggle-switch",
         "/demos/typography"
       ]
@@ -209,6 +224,9 @@ export const routeTree = rootRoute.addChildren({
     },
     "/demos/select": {
       "filePath": "demos/select.tsx"
+    },
+    "/demos/slider": {
+      "filePath": "demos/slider.tsx"
     },
     "/demos/toggle-switch": {
       "filePath": "demos/toggle-switch.tsx"
