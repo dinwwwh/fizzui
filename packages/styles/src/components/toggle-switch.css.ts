@@ -1,6 +1,6 @@
 import { recipe } from '@styles/lib'
 import { vars } from '@styles/themes.css'
-import { disabledSelector, enabledSelector, focusVisibleSelector, rem } from '@styles/utils'
+import { disabledSelector, focusVisibleSelector, rem } from '@styles/utils'
 
 export const toggleSwitchRoot = recipe({
   base: {
@@ -14,10 +14,9 @@ export const toggleSwitchRoot = recipe({
     willChange: 'background-color',
     transition: 'background-color 0.2s ease-in-out',
 
+    cursor: 'pointer',
+
     selectors: {
-      [enabledSelector]: {
-        cursor: 'pointer',
-      },
       [disabledSelector]: {
         cursor: 'not-allowed',
       },

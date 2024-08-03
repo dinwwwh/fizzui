@@ -6,6 +6,7 @@ export const badgeRoot = recipe({
   base: {
     display: 'inline-flex',
     alignItems: 'center',
+    justifyContent: 'center',
     borderWidth: rem(1),
   },
 
@@ -17,6 +18,7 @@ export const badgeRoot = recipe({
         fontSize: rem(12),
         fontWeight: 500,
         borderRadius: vars.border.radius.full,
+        columnGap: rem(4),
       },
       md: {
         height: rem(24),
@@ -24,6 +26,7 @@ export const badgeRoot = recipe({
         fontSize: rem(14),
         fontWeight: 500,
         borderRadius: vars.border.radius.full,
+        columnGap: rem(5),
       },
     },
 
@@ -85,43 +88,25 @@ export const badgeIcon = recipe({
     {
       variants: { align: 'start', size: 'sm' },
       style: {
-        marginRight: rem(4),
         marginLeft: rem(-2),
       },
     },
     {
       variants: { align: 'start', size: 'md' },
       style: {
-        marginRight: rem(5),
         marginLeft: rem(-3),
-      },
-    },
-    {
-      variants: { align: 'center', size: 'sm' },
-      style: {
-        marginRight: rem(4),
-        marginLeft: rem(4),
-      },
-    },
-    {
-      variants: { align: 'center', size: 'md' },
-      style: {
-        marginRight: rem(5),
-        marginLeft: rem(5),
       },
     },
     {
       variants: { align: 'end', size: 'sm' },
       style: {
         marginRight: rem(-2),
-        marginLeft: rem(4),
       },
     },
     {
       variants: { align: 'end', size: 'md' },
       style: {
         marginRight: rem(-3),
-        marginLeft: rem(5),
       },
     },
   ],

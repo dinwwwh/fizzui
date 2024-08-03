@@ -1,5 +1,5 @@
 import { DemoContainer, DemoFlexRow } from '@content/components/demo'
-import { button, buttonGroup, title } from '@fizzui/styles'
+import { buttonGroup, title } from '@fizzui/styles'
 import { IconArrowLeft, IconArrowRight, IconCircle, IconPlus } from '@tabler/icons-react'
 import { createFileRoute } from '@tanstack/react-router'
 

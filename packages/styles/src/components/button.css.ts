@@ -12,10 +12,9 @@ export const buttonRoot = recipe({
     transitionTimingFunction: 'cubic-bezier(0.4, 0, 0.2, 1)',
     transitionDuration: '200ms',
 
+    cursor: 'pointer',
+
     selectors: {
-      [enabledSelector]: {
-        cursor: 'pointer',
-      },
       [disabledSelector]: {
         cursor: 'not-allowed',
       },
@@ -31,6 +30,7 @@ export const buttonRoot = recipe({
         borderRadius: vars.border.radius.md,
         fontSize: rem(12),
         fontWeight: 500,
+        columnGap: rem(4),
       },
       md: {
         height: rem(36),
@@ -39,6 +39,7 @@ export const buttonRoot = recipe({
         borderWidth: rem(0.5),
         fontSize: rem(14),
         fontWeight: 500,
+        columnGap: rem(6),
       },
     },
     variant: {
@@ -177,20 +178,11 @@ export const buttonIcon = recipe({
       variants: { size: 'sm', align: 'start' },
       style: {
         marginLeft: rem(-2),
-        marginRight: rem(4),
-      },
-    },
-    {
-      variants: { size: 'sm', align: 'center' },
-      style: {
-        marginLeft: rem(4),
-        marginRight: rem(4),
       },
     },
     {
       variants: { size: 'sm', align: 'end' },
       style: {
-        marginLeft: rem(4),
         marginRight: rem(-2),
       },
     },
@@ -198,20 +190,11 @@ export const buttonIcon = recipe({
       variants: { size: 'md', align: 'start' },
       style: {
         marginLeft: rem(-3),
-        marginRight: rem(6),
-      },
-    },
-    {
-      variants: { size: 'md', align: 'center' },
-      style: {
-        marginLeft: rem(6),
-        marginRight: rem(6),
       },
     },
     {
       variants: { size: 'md', align: 'end' },
       style: {
-        marginLeft: rem(6),
         marginRight: rem(-3),
       },
     },
