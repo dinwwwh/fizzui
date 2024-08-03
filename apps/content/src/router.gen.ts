@@ -13,6 +13,7 @@
 import { Route as rootRoute } from './routes/__root'
 import { Route as DemosTypographyImport } from './routes/demos/typography'
 import { Route as DemosTooltipImport } from './routes/demos/tooltip'
+import { Route as DemosToggleImport } from './routes/demos/toggle'
 import { Route as DemosSwitcherImport } from './routes/demos/switcher'
 import { Route as DemosSliderImport } from './routes/demos/slider'
 import { Route as DemosSelectImport } from './routes/demos/select'
@@ -35,6 +36,11 @@ const DemosTypographyRoute = DemosTypographyImport.update({
 
 const DemosTooltipRoute = DemosTooltipImport.update({
   path: '/demos/tooltip',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const DemosToggleRoute = DemosToggleImport.update({
+  path: '/demos/toggle',
   getParentRoute: () => rootRoute,
 } as any)
 
@@ -186,6 +192,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DemosSwitcherImport
       parentRoute: typeof rootRoute
     }
+    '/demos/toggle': {
+      id: '/demos/toggle'
+      path: '/demos/toggle'
+      fullPath: '/demos/toggle'
+      preLoaderRoute: typeof DemosToggleImport
+      parentRoute: typeof rootRoute
+    }
     '/demos/tooltip': {
       id: '/demos/tooltip'
       path: '/demos/tooltip'
@@ -218,6 +231,7 @@ export const routeTree = rootRoute.addChildren({
   DemosSelectRoute,
   DemosSliderRoute,
   DemosSwitcherRoute,
+  DemosToggleRoute,
   DemosTooltipRoute,
   DemosTypographyRoute,
 })
@@ -242,6 +256,7 @@ export const routeTree = rootRoute.addChildren({
         "/demos/select",
         "/demos/slider",
         "/demos/switcher",
+        "/demos/toggle",
         "/demos/tooltip",
         "/demos/typography"
       ]
@@ -281,6 +296,9 @@ export const routeTree = rootRoute.addChildren({
     },
     "/demos/switcher": {
       "filePath": "demos/switcher.tsx"
+    },
+    "/demos/toggle": {
+      "filePath": "demos/toggle.tsx"
     },
     "/demos/tooltip": {
       "filePath": "demos/tooltip.tsx"
