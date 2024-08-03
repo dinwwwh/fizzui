@@ -2,7 +2,7 @@ import { recipe } from '@styles/lib'
 import { vars } from '@styles/themes.css'
 import { disabledSelector, focusVisibleSelector, rem } from '@styles/utils'
 
-export const toggleSwitchRoot = recipe({
+export const switcherRoot = recipe({
   base: {
     position: 'relative',
     display: 'inline-block',
@@ -51,7 +51,7 @@ export const toggleSwitchRoot = recipe({
   },
 })
 
-export const toggleSwitchThumb = recipe({
+export const switcherThumb = recipe({
   base: {
     position: 'absolute',
     left: rem(2),

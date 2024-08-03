@@ -13,7 +13,7 @@
 import { Route as rootRoute } from './routes/__root'
 import { Route as DemosTypographyImport } from './routes/demos/typography'
 import { Route as DemosTooltipImport } from './routes/demos/tooltip'
-import { Route as DemosToggleSwitchImport } from './routes/demos/toggle-switch'
+import { Route as DemosSwitcherImport } from './routes/demos/switcher'
 import { Route as DemosSliderImport } from './routes/demos/slider'
 import { Route as DemosSelectImport } from './routes/demos/select'
 import { Route as DemosProgressImport } from './routes/demos/progress'
@@ -38,8 +38,8 @@ const DemosTooltipRoute = DemosTooltipImport.update({
   getParentRoute: () => rootRoute,
 } as any)
 
-const DemosToggleSwitchRoute = DemosToggleSwitchImport.update({
-  path: '/demos/toggle-switch',
+const DemosSwitcherRoute = DemosSwitcherImport.update({
+  path: '/demos/switcher',
   getParentRoute: () => rootRoute,
 } as any)
 
@@ -179,11 +179,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DemosSliderImport
       parentRoute: typeof rootRoute
     }
-    '/demos/toggle-switch': {
-      id: '/demos/toggle-switch'
-      path: '/demos/toggle-switch'
-      fullPath: '/demos/toggle-switch'
-      preLoaderRoute: typeof DemosToggleSwitchImport
+    '/demos/switcher': {
+      id: '/demos/switcher'
+      path: '/demos/switcher'
+      fullPath: '/demos/switcher'
+      preLoaderRoute: typeof DemosSwitcherImport
       parentRoute: typeof rootRoute
     }
     '/demos/tooltip': {
@@ -217,7 +217,7 @@ export const routeTree = rootRoute.addChildren({
   DemosProgressRoute,
   DemosSelectRoute,
   DemosSliderRoute,
-  DemosToggleSwitchRoute,
+  DemosSwitcherRoute,
   DemosTooltipRoute,
   DemosTypographyRoute,
 })
@@ -241,7 +241,7 @@ export const routeTree = rootRoute.addChildren({
         "/demos/progress",
         "/demos/select",
         "/demos/slider",
-        "/demos/toggle-switch",
+        "/demos/switcher",
         "/demos/tooltip",
         "/demos/typography"
       ]
@@ -279,8 +279,8 @@ export const routeTree = rootRoute.addChildren({
     "/demos/slider": {
       "filePath": "demos/slider.tsx"
     },
-    "/demos/toggle-switch": {
-      "filePath": "demos/toggle-switch.tsx"
+    "/demos/switcher": {
+      "filePath": "demos/switcher.tsx"
     },
     "/demos/tooltip": {
       "filePath": "demos/tooltip.tsx"
