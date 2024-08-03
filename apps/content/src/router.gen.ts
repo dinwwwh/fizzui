@@ -15,6 +15,7 @@ import { Route as DemosTypographyImport } from './routes/demos/typography'
 import { Route as DemosToggleSwitchImport } from './routes/demos/toggle-switch'
 import { Route as DemosSliderImport } from './routes/demos/slider'
 import { Route as DemosSelectImport } from './routes/demos/select'
+import { Route as DemosProgressImport } from './routes/demos/progress'
 import { Route as DemosPopoverImport } from './routes/demos/popover'
 import { Route as DemosInputImport } from './routes/demos/input'
 import { Route as DemosCheckboxImport } from './routes/demos/checkbox'
@@ -42,6 +43,11 @@ const DemosSliderRoute = DemosSliderImport.update({
 
 const DemosSelectRoute = DemosSelectImport.update({
   path: '/demos/select',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const DemosProgressRoute = DemosProgressImport.update({
+  path: '/demos/progress',
   getParentRoute: () => rootRoute,
 } as any)
 
@@ -133,6 +139,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DemosPopoverImport
       parentRoute: typeof rootRoute
     }
+    '/demos/progress': {
+      id: '/demos/progress'
+      path: '/demos/progress'
+      fullPath: '/demos/progress'
+      preLoaderRoute: typeof DemosProgressImport
+      parentRoute: typeof rootRoute
+    }
     '/demos/select': {
       id: '/demos/select'
       path: '/demos/select'
@@ -174,6 +187,7 @@ export const routeTree = rootRoute.addChildren({
   DemosCheckboxRoute,
   DemosInputRoute,
   DemosPopoverRoute,
+  DemosProgressRoute,
   DemosSelectRoute,
   DemosSliderRoute,
   DemosToggleSwitchRoute,
@@ -195,6 +209,7 @@ export const routeTree = rootRoute.addChildren({
         "/demos/checkbox",
         "/demos/input",
         "/demos/popover",
+        "/demos/progress",
         "/demos/select",
         "/demos/slider",
         "/demos/toggle-switch",
@@ -221,6 +236,9 @@ export const routeTree = rootRoute.addChildren({
     },
     "/demos/popover": {
       "filePath": "demos/popover.tsx"
+    },
+    "/demos/progress": {
+      "filePath": "demos/progress.tsx"
     },
     "/demos/select": {
       "filePath": "demos/select.tsx"
