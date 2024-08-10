@@ -20,6 +20,7 @@ import { Route as DemosSeparatorImport } from './routes/demos/separator'
 import { Route as DemosSelectImport } from './routes/demos/select'
 import { Route as DemosProgressImport } from './routes/demos/progress'
 import { Route as DemosPopoverImport } from './routes/demos/popover'
+import { Route as DemosMenuImport } from './routes/demos/menu'
 import { Route as DemosKbdImport } from './routes/demos/kbd'
 import { Route as DemosInputGroupImport } from './routes/demos/input-group'
 import { Route as DemosInputImport } from './routes/demos/input'
@@ -74,6 +75,11 @@ const DemosProgressRoute = DemosProgressImport.update({
 
 const DemosPopoverRoute = DemosPopoverImport.update({
   path: '/demos/popover',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const DemosMenuRoute = DemosMenuImport.update({
+  path: '/demos/menu',
   getParentRoute: () => rootRoute,
 } as any)
 
@@ -189,6 +195,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DemosKbdImport
       parentRoute: typeof rootRoute
     }
+    '/demos/menu': {
+      id: '/demos/menu'
+      path: '/demos/menu'
+      fullPath: '/demos/menu'
+      preLoaderRoute: typeof DemosMenuImport
+      parentRoute: typeof rootRoute
+    }
     '/demos/popover': {
       id: '/demos/popover'
       path: '/demos/popover'
@@ -267,6 +280,7 @@ export const routeTree = rootRoute.addChildren({
   DemosInputRoute,
   DemosInputGroupRoute,
   DemosKbdRoute,
+  DemosMenuRoute,
   DemosPopoverRoute,
   DemosProgressRoute,
   DemosSelectRoute,
@@ -295,6 +309,7 @@ export const routeTree = rootRoute.addChildren({
         "/demos/input",
         "/demos/input-group",
         "/demos/kbd",
+        "/demos/menu",
         "/demos/popover",
         "/demos/progress",
         "/demos/select",
@@ -332,6 +347,9 @@ export const routeTree = rootRoute.addChildren({
     },
     "/demos/kbd": {
       "filePath": "demos/kbd.tsx"
+    },
+    "/demos/menu": {
+      "filePath": "demos/menu.tsx"
     },
     "/demos/popover": {
       "filePath": "demos/popover.tsx"

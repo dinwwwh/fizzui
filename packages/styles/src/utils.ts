@@ -11,6 +11,7 @@ export const focusVisibleUserInvalidWithinSelector = '&:focus-within:has(:focus-
 export const hoverSelector = '&:is(:hover, [data-hover=\'\'], [data-hover=\'true\']):not(:disabled, [aria-disabled=\'\'], [aria-disabled=\'true\'], [data-disabled=\'\'])'
 export const pressedSelector = '&:is(:active, [data-pressed=\'\'] ,[data-pressed=\'true\']):not(:disabled, [aria-disabled=\'\'], [aria-disabled=\'true\'], [data-disabled=\'\'], [data-disabled=\'true\'])'
 export const enabledSelector = '&:not(:disabled, [aria-disabled=\'\'], [aria-disabled=\'true\'], [data-disabled=\'\'], [data-disabled=\'true\'])'
+export const expandedSelector = '&:is([aria-expanded=\'true\'], [aria-expanded=\'\'], [data-expanded=\'\'], [data-expanded=\'true\'], [data-state=\'open\'])'
 
 export function rem(px: number) {
   return `${px / 16}rem`

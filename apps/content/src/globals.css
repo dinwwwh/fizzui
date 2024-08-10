@@ -9,5 +9,5 @@ code,
 kbd,
 samp {
   /* TODO: remove !important */
-  font-family: monospace !important;
+  font-family: 'JetBrains Mono Variable', monospace !important;
 }
