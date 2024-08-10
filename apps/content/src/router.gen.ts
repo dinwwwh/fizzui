@@ -22,6 +22,7 @@ import { Route as DemosSeparatorImport } from './routes/demos/separator'
 import { Route as DemosSelectImport } from './routes/demos/select'
 import { Route as DemosProgressImport } from './routes/demos/progress'
 import { Route as DemosPopoverImport } from './routes/demos/popover'
+import { Route as DemosMenubarImport } from './routes/demos/menubar'
 import { Route as DemosMenuImport } from './routes/demos/menu'
 import { Route as DemosKbdImport } from './routes/demos/kbd'
 import { Route as DemosInputGroupImport } from './routes/demos/input-group'
@@ -87,6 +88,11 @@ const DemosProgressRoute = DemosProgressImport.update({
 
 const DemosPopoverRoute = DemosPopoverImport.update({
   path: '/demos/popover',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const DemosMenubarRoute = DemosMenubarImport.update({
+  path: '/demos/menubar',
   getParentRoute: () => rootRoute,
 } as any)
 
@@ -214,6 +220,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DemosMenuImport
       parentRoute: typeof rootRoute
     }
+    '/demos/menubar': {
+      id: '/demos/menubar'
+      path: '/demos/menubar'
+      fullPath: '/demos/menubar'
+      preLoaderRoute: typeof DemosMenubarImport
+      parentRoute: typeof rootRoute
+    }
     '/demos/popover': {
       id: '/demos/popover'
       path: '/demos/popover'
@@ -307,6 +320,7 @@ export const routeTree = rootRoute.addChildren({
   DemosInputGroupRoute,
   DemosKbdRoute,
   DemosMenuRoute,
+  DemosMenubarRoute,
   DemosPopoverRoute,
   DemosProgressRoute,
   DemosSelectRoute,
@@ -338,6 +352,7 @@ export const routeTree = rootRoute.addChildren({
         "/demos/input-group",
         "/demos/kbd",
         "/demos/menu",
+        "/demos/menubar",
         "/demos/popover",
         "/demos/progress",
         "/demos/select",
@@ -380,6 +395,9 @@ export const routeTree = rootRoute.addChildren({
     },
     "/demos/menu": {
       "filePath": "demos/menu.tsx"
+    },
+    "/demos/menubar": {
+      "filePath": "demos/menubar.tsx"
     },
     "/demos/popover": {
       "filePath": "demos/popover.tsx"

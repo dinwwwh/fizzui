@@ -1,6 +1,6 @@
 import { recipe } from '@styles/lib'
 import { vars } from '@styles/themes.css'
-import { disabledSelector, expandedSelector, focusVisibleSelector, hoverSelector, rem } from '@styles/utils'
+import { disabledSelector, focusVisibleSelector, hoverSelector, rem } from '@styles/utils'
 
 export const menuRoot = recipe({
   base: {
@@ -9,6 +9,7 @@ export const menuRoot = recipe({
   variants: {
     size: {
       sm: {
+        minWidth: rem(160),
         padding: rem(3),
         borderRadius: vars.radius.md,
         borderWidth: rem(1),
@@ -16,6 +17,7 @@ export const menuRoot = recipe({
       },
 
       md: {
+        minWidth: rem(220),
         padding: rem(4),
         borderRadius: vars.radius.lg,
         borderWidth: rem(1),
@@ -90,7 +92,7 @@ export const menuItem = recipe({
         color: vars.fg.base[700],
 
         selectors: {
-          [`${hoverSelector}, ${focusVisibleSelector}, ${expandedSelector}`]: {
+          [`${hoverSelector}, ${focusVisibleSelector}`]: {
             backgroundColor: vars.bg.base[50],
           },
           [disabledSelector]: {
