@@ -14,12 +14,14 @@ export const toolbarRoot = recipe({
         borderWidth: rem(1),
         borderRadius: vars.radius.md,
         gap: rem(6),
+        boxShadow: vars.shadow.xs,
       },
       md: {
         padding: rem(4),
         borderWidth: rem(1),
         borderRadius: vars.radius.lg,
         gap: rem(8),
+        boxShadow: vars.shadow.sm,
       },
     },
 

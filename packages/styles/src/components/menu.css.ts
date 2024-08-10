@@ -13,7 +13,7 @@ export const menuRoot = recipe({
         padding: rem(3),
         borderRadius: vars.radius.md,
         borderWidth: rem(1),
-        boxShadow: vars.shadow.md,
+        boxShadow: vars.shadow.sm,
       },
 
       md: {
