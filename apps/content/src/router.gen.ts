@@ -13,6 +13,8 @@
 import { Route as rootRoute } from './routes/__root'
 import { Route as DemosTypographyImport } from './routes/demos/typography'
 import { Route as DemosTooltipImport } from './routes/demos/tooltip'
+import { Route as DemosToolbarImport } from './routes/demos/toolbar'
+import { Route as DemosToggleGroupImport } from './routes/demos/toggle-group'
 import { Route as DemosToggleImport } from './routes/demos/toggle'
 import { Route as DemosSwitcherImport } from './routes/demos/switcher'
 import { Route as DemosSliderImport } from './routes/demos/slider'
@@ -40,6 +42,16 @@ const DemosTypographyRoute = DemosTypographyImport.update({
 
 const DemosTooltipRoute = DemosTooltipImport.update({
   path: '/demos/tooltip',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const DemosToolbarRoute = DemosToolbarImport.update({
+  path: '/demos/toolbar',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const DemosToggleGroupRoute = DemosToggleGroupImport.update({
+  path: '/demos/toggle-group',
   getParentRoute: () => rootRoute,
 } as any)
 
@@ -251,6 +263,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DemosToggleImport
       parentRoute: typeof rootRoute
     }
+    '/demos/toggle-group': {
+      id: '/demos/toggle-group'
+      path: '/demos/toggle-group'
+      fullPath: '/demos/toggle-group'
+      preLoaderRoute: typeof DemosToggleGroupImport
+      parentRoute: typeof rootRoute
+    }
+    '/demos/toolbar': {
+      id: '/demos/toolbar'
+      path: '/demos/toolbar'
+      fullPath: '/demos/toolbar'
+      preLoaderRoute: typeof DemosToolbarImport
+      parentRoute: typeof rootRoute
+    }
     '/demos/tooltip': {
       id: '/demos/tooltip'
       path: '/demos/tooltip'
@@ -288,6 +314,8 @@ export const routeTree = rootRoute.addChildren({
   DemosSliderRoute,
   DemosSwitcherRoute,
   DemosToggleRoute,
+  DemosToggleGroupRoute,
+  DemosToolbarRoute,
   DemosTooltipRoute,
   DemosTypographyRoute,
 })
@@ -317,6 +345,8 @@ export const routeTree = rootRoute.addChildren({
         "/demos/slider",
         "/demos/switcher",
         "/demos/toggle",
+        "/demos/toggle-group",
+        "/demos/toolbar",
         "/demos/tooltip",
         "/demos/typography"
       ]
@@ -371,6 +401,12 @@ export const routeTree = rootRoute.addChildren({
     },
     "/demos/toggle": {
       "filePath": "demos/toggle.tsx"
+    },
+    "/demos/toggle-group": {
+      "filePath": "demos/toggle-group.tsx"
+    },
+    "/demos/toolbar": {
+      "filePath": "demos/toolbar.tsx"
     },
     "/demos/tooltip": {
       "filePath": "demos/tooltip.tsx"

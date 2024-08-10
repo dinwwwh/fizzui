@@ -43,11 +43,37 @@ export const separatorRoot = recipe({
         backgroundColor: vars.border.base[300],
       },
     },
+
+    insideFlex: {
+      true: {},
+    },
   },
+
+  compoundVariants: [
+    {
+      variants: { insideFlex: true, autoOrientation: true },
+      style: {
+        selectors: {
+          '&[data-orientation="vertical"]': {
+            height: 'auto',
+            alignItems: 'stretch',
+          },
+        },
+      },
+    },
+    {
+      variants: { insideFlex: true, orientation: 'vertical' },
+      style: {
+        height: 'auto',
+        alignItems: 'stretch',
+      },
+    },
+  ],
 
   defaultVariants: {
     orientation: 'horizontal',
-    autoOrientation: true,
+    autoOrientation: false,
     color: 'base-200',
+    insideFlex: false,
   },
 })

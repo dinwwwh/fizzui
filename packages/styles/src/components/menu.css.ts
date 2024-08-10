@@ -142,7 +142,7 @@ export const menuItem = recipe({
 
 export const menuSeparator = recipe({
   base: {
-    display: 'block',
+    width: '100%',
   },
 
   variants: {
