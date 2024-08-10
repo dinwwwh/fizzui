@@ -8,6 +8,13 @@ export const menuRoot = recipe({
 
   variants: {
     size: {
+      sm: {
+        padding: rem(3),
+        borderRadius: vars.radius.md,
+        borderWidth: rem(1),
+        boxShadow: vars.shadow.md,
+      },
+
       md: {
         padding: rem(4),
         borderRadius: vars.radius.lg,
@@ -55,6 +62,17 @@ export const menuItem = recipe({
 
   variants: {
     size: {
+      sm: {
+        gap: rem(8),
+        margin: `${rem(1)} 0`,
+        paddingRight: rem(10),
+        borderRadius: vars.radius.md,
+        height: rem(28),
+        fontSize: rem(12),
+        fontWeight: 500,
+        lineHeight: rem(16),
+      },
+
       md: {
         gap: rem(12),
         margin: `${rem(1)} 0`,
@@ -90,6 +108,18 @@ export const menuItem = recipe({
 
   compoundVariants: [
     {
+      variants: { size: 'sm', inset: true },
+      style: {
+        paddingLeft: rem(30),
+      },
+    },
+    {
+      variants: { size: 'sm', inset: false },
+      style: {
+        paddingLeft: rem(10),
+      },
+    },
+    {
       variants: { size: 'md', inset: true },
       style: {
         paddingLeft: rem(34),
@@ -117,6 +147,10 @@ export const menuSeparator = recipe({
 
   variants: {
     size: {
+      sm: {
+        height: rem(1),
+        margin: `${rem(3)} ${rem(-3)}`,
+      },
       md: {
         height: rem(1),
         margin: `${rem(4)} ${rem(-4)}`,
@@ -125,7 +159,7 @@ export const menuSeparator = recipe({
 
     color: {
       base: {
-        backgroundColor: vars.fg.base[200],
+        backgroundColor: vars.fg.base[100],
       },
     },
   },
@@ -146,6 +180,11 @@ export const menuKbd = recipe({
 
   variants: {
     size: {
+      sm: {
+        lineHeight: rem(16),
+        fontSize: rem(10),
+        fontWeight: 400,
+      },
       md: {
         lineHeight: rem(18),
         fontSize: rem(12),
@@ -175,6 +214,11 @@ export const menuIcon = recipe({
 
   variants: {
     size: {
+      sm: {
+        height: rem(14),
+        width: rem(14),
+        left: rem(8),
+      },
       md: {
         height: rem(16),
         width: rem(16),
@@ -191,6 +235,10 @@ export const menuIcon = recipe({
 export const menuIconMore = recipe({
   variants: {
     size: {
+      sm: {
+        height: rem(14),
+        width: rem(14),
+      },
       md: {
         height: rem(16),
         width: rem(16),
@@ -213,6 +261,13 @@ export const menuIconMore = recipe({
 export const menuLabel = recipe({
   variants: {
     size: {
+      sm: {
+        fontSize: rem(10),
+        fontWeight: 500,
+        lineHeight: rem(16),
+        paddingTop: rem(2),
+        paddingBottom: rem(2),
+      },
       md: {
         fontSize: rem(12),
         fontWeight: 500,
@@ -236,12 +291,23 @@ export const menuLabel = recipe({
 
   compoundVariants: [
     {
+      variants: { size: 'sm', inset: true },
+      style: {
+        paddingLeft: rem(30),
+      },
+    },
+    {
+      variants: { size: 'sm', inset: false },
+      style: {
+        paddingLeft: rem(10),
+      },
+    },
+    {
       variants: { size: 'md', inset: true },
       style: {
         paddingLeft: rem(34),
       },
     },
-
     {
       variants: { size: 'md', inset: false },
       style: {
