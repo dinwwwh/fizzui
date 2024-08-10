@@ -57,3 +57,40 @@ export function mapInheritedVariants<T extends RuntimeFn<any> | { __tree: SlotTr
     },
   })
 }
+
+/**
+ * Note: this function only works inside compose fn, not outside
+ */
+export function mergeDefaultVariants<T extends RuntimeFn<any> | { __tree: SlotTree } | SlotTree>(
+  tree: T,
+  defaultVariants: T extends RuntimeFn<any> ? Parameters<T>[0] :
+    T extends { __tree: SlotTree } ? Parameters<T['__tree']['root']>[0] :
+      T extends SlotTree ? Parameters<T['root']>[0] :
+        never
+  ,
+): T {
+  if (typeof tree === 'object' || ('__tree' in tree && typeof tree.__tree === 'object')) {
+    return mapInheritedVariants(tree, inheritVariants => ({
+      ...defaultVariants,
+      ...inheritVariants,
+    }))
+  }
+
+  else if (typeof tree === 'function') {
+    return new Proxy(tree, {
+      apply(target, thisArg, args) {
+        const [variants, ...rest] = args
+
+        return Reflect.apply(target, thisArg, [
+          {
+            ...defaultVariants,
+            ...(variants ?? {}),
+          },
+          ...rest,
+        ])
+      },
+    })
+  }
+
+  throw new Error('Invalid tree')
+}
