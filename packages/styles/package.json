@@ -1,8 +1,30 @@
 {
   "name": "@fizzui/styles",
   "type": "module",
-  "version": "0.0.0",
-  "private": true,
+  "version": "0.0.3",
+  "author": {
+    "name": "dinwwwh",
+    "email": "dinwwwh@gmail.com",
+    "url": "https://dinwwwh.com"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/dinwwwh/fizzui",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dinwwwh/fizzui.git",
+    "directory": "packages/styles"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "dinwwwh",
+    "dinwwwh ui",
+    "fizzui",
+    "fizzui ui",
+    "tailwind ui",
+    "vanilla-extract ui"
+  ],
   "exports": {
     ".": {
       "types": "./dist/src/index.d.ts",
@@ -11,6 +33,10 @@
     },
     "./css": "./dist/style.css"
   },
+  "files": [
+    "dist",
+    "src"
+  ],
   "scripts": {
     "dev": "vite build --watch",
     "build": "vite build",
