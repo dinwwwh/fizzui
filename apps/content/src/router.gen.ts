@@ -16,6 +16,7 @@ import { Route as DemosTooltipImport } from './routes/demos/tooltip'
 import { Route as DemosToolbarImport } from './routes/demos/toolbar'
 import { Route as DemosToggleGroupImport } from './routes/demos/toggle-group'
 import { Route as DemosToggleImport } from './routes/demos/toggle'
+import { Route as DemosTabGroupImport } from './routes/demos/tab-group'
 import { Route as DemosSwitcherImport } from './routes/demos/switcher'
 import { Route as DemosSliderImport } from './routes/demos/slider'
 import { Route as DemosSeparatorImport } from './routes/demos/separator'
@@ -58,6 +59,11 @@ const DemosToggleGroupRoute = DemosToggleGroupImport.update({
 
 const DemosToggleRoute = DemosToggleImport.update({
   path: '/demos/toggle',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const DemosTabGroupRoute = DemosTabGroupImport.update({
+  path: '/demos/tab-group',
   getParentRoute: () => rootRoute,
 } as any)
 
@@ -269,6 +275,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DemosSwitcherImport
       parentRoute: typeof rootRoute
     }
+    '/demos/tab-group': {
+      id: '/demos/tab-group'
+      path: '/demos/tab-group'
+      fullPath: '/demos/tab-group'
+      preLoaderRoute: typeof DemosTabGroupImport
+      parentRoute: typeof rootRoute
+    }
     '/demos/toggle': {
       id: '/demos/toggle'
       path: '/demos/toggle'
@@ -327,6 +340,7 @@ export const routeTree = rootRoute.addChildren({
   DemosSeparatorRoute,
   DemosSliderRoute,
   DemosSwitcherRoute,
+  DemosTabGroupRoute,
   DemosToggleRoute,
   DemosToggleGroupRoute,
   DemosToolbarRoute,
@@ -359,6 +373,7 @@ export const routeTree = rootRoute.addChildren({
         "/demos/separator",
         "/demos/slider",
         "/demos/switcher",
+        "/demos/tab-group",
         "/demos/toggle",
         "/demos/toggle-group",
         "/demos/toolbar",
@@ -416,6 +431,9 @@ export const routeTree = rootRoute.addChildren({
     },
     "/demos/switcher": {
       "filePath": "demos/switcher.tsx"
+    },
+    "/demos/tab-group": {
+      "filePath": "demos/tab-group.tsx"
     },
     "/demos/toggle": {
       "filePath": "demos/toggle.tsx"
