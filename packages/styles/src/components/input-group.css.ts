@@ -133,20 +133,33 @@ export const inputGroupIcon = recipe({
 })
 
 export const inputGroupSeparator = recipe({
-  base: {
-    width: rem(1),
-    height: '100%',
-  },
-
   variants: {
+    size: {
+      md: {},
+    },
+    orientation: {
+      vertical: {},
+    },
     color: {
       base: {
-        backgroundColor: vars.bg.base[300],
+        backgroundColor: vars.border.base[200],
       },
     },
   },
 
+  compoundVariants: [
+    {
+      variants: { orientation: 'vertical', size: 'md' },
+      style: {
+        height: `calc(100% - ${rem(8)})`,
+        width: rem(1),
+      },
+    },
+  ],
+
   defaultVariants: {
+    size: 'md',
+    orientation: 'vertical',
     color: 'base',
   },
 })

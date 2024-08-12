@@ -9,7 +9,7 @@ export const toggleGroupRoot = recipe({
   variants: {
     size: {
       sm: {
-        gap: rem(3),
+        gap: rem(2),
       },
       md: {
         gap: rem(4),

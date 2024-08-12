@@ -10,7 +10,7 @@ export const toolbarRoot = recipe({
   variants: {
     size: {
       sm: {
-        padding: rem(4),
+        padding: rem(2),
         borderWidth: rem(1),
         borderRadius: vars.radius.md,
         gap: rem(6),
