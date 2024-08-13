@@ -1,19 +1,8 @@
 import { slideDownAndFade, slideLeftAndFade, slideRightAndFade, slideUpAndFade } from '@styles/animation.css'
 import { recipe } from '@styles/lib'
-import { vars } from '@styles/themes.css'
-import { rem } from '@styles/utils'
 
 export const popoverRoot = recipe({
   base: {
-    color: vars.fg.base[950],
-    backgroundColor: vars.bg.base[0],
-    maxWidth: rem(320),
-    padding: rem(4),
-
-    borderWidth: rem(1),
-    borderRadius: vars.radius.md,
-    boxShadow: vars.shadow.md,
-
     zIndex: 50,
 
     willChange: 'transform, opacity',
