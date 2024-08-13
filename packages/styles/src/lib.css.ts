@@ -10,4 +10,5 @@ export const reset = style({
   font: 'inherit',
   verticalAlign: 'baseline',
   background: 'transparent',
+  borderSpacing: 0,
 })

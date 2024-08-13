@@ -8,7 +8,7 @@ export const focusWithinSelector = '&:focus-within'
 export const focusVisibleWithinSelector = '&:focus-within:has(:focus-visible)'
 export const focusVisibleInvalidWithinSelector = '&:focus-within:has(:focus-visible):has(:invalid, [aria-invalid=\'\'], [aria-invalid=\'true\'], [data-invalid=\'\'], [data-invalid=\'true\'])'
 export const focusVisibleUserInvalidWithinSelector = '&:focus-within:has(:focus-visible):has(:user-invalid, [aria-invalid=\'\'], [aria-invalid=\'true\'], [data-invalid=\'\'], [data-invalid=\'true\'])'
-export const hoverSelector = '&:is(:hover, [data-hover=\'\'], [data-hover=\'true\'], [aria-expanded=\'true\'], [aria-expanded=\'\'], [data-expanded=\'\'], [data-expanded=\'true\'], [data-state=\'open\']):not(:disabled, [aria-disabled=\'\'], [aria-disabled=\'true\'], [data-disabled=\'\'])'
+export const hoverSelector = '&:is(:hover, [data-hover=\'\'], [data-hover=\'true\'], [aria-expanded=\'true\'], [aria-expanded=\'\'], [data-expanded=\'\'], [data-expanded=\'true\'], [data-state=\'open\']):not(:disabled, [aria-disabled=\'\'], [aria-disabled=\'true\'], [data-disabled=\'\'], [data-disabled=\'true\'])'
 export const pressedSelector = '&:is(:active, [data-pressed=\'\'] ,[data-pressed=\'true\']):not(:disabled, [aria-disabled=\'\'], [aria-disabled=\'true\'], [data-disabled=\'\'], [data-disabled=\'true\'])'
 export const enabledSelector = '&:not(:disabled, [aria-disabled=\'\'], [aria-disabled=\'true\'], [data-disabled=\'\'], [data-disabled=\'true\'])'
 

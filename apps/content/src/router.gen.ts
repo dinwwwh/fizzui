@@ -16,6 +16,7 @@ import { Route as DemosTooltipImport } from './routes/demos/tooltip'
 import { Route as DemosToolbarImport } from './routes/demos/toolbar'
 import { Route as DemosToggleGroupImport } from './routes/demos/toggle-group'
 import { Route as DemosToggleImport } from './routes/demos/toggle'
+import { Route as DemosTableImport } from './routes/demos/table'
 import { Route as DemosTabGroupImport } from './routes/demos/tab-group'
 import { Route as DemosSwitcherImport } from './routes/demos/switcher'
 import { Route as DemosSliderImport } from './routes/demos/slider'
@@ -59,6 +60,11 @@ const DemosToggleGroupRoute = DemosToggleGroupImport.update({
 
 const DemosToggleRoute = DemosToggleImport.update({
   path: '/demos/toggle',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const DemosTableRoute = DemosTableImport.update({
+  path: '/demos/table',
   getParentRoute: () => rootRoute,
 } as any)
 
@@ -282,6 +288,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DemosTabGroupImport
       parentRoute: typeof rootRoute
     }
+    '/demos/table': {
+      id: '/demos/table'
+      path: '/demos/table'
+      fullPath: '/demos/table'
+      preLoaderRoute: typeof DemosTableImport
+      parentRoute: typeof rootRoute
+    }
     '/demos/toggle': {
       id: '/demos/toggle'
       path: '/demos/toggle'
@@ -341,6 +354,7 @@ export const routeTree = rootRoute.addChildren({
   DemosSliderRoute,
   DemosSwitcherRoute,
   DemosTabGroupRoute,
+  DemosTableRoute,
   DemosToggleRoute,
   DemosToggleGroupRoute,
   DemosToolbarRoute,
@@ -374,6 +388,7 @@ export const routeTree = rootRoute.addChildren({
         "/demos/slider",
         "/demos/switcher",
         "/demos/tab-group",
+        "/demos/table",
         "/demos/toggle",
         "/demos/toggle-group",
         "/demos/toolbar",
@@ -434,6 +449,9 @@ export const routeTree = rootRoute.addChildren({
     },
     "/demos/tab-group": {
       "filePath": "demos/tab-group.tsx"
+    },
+    "/demos/table": {
+      "filePath": "demos/table.tsx"
     },
     "/demos/toggle": {
       "filePath": "demos/toggle.tsx"

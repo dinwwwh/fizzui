@@ -7,6 +7,7 @@ export const checkboxRoot = recipe({
     display: 'inline-flex',
     justifyContent: 'center',
     alignItems: 'center',
+    flexShrink: 0,
 
     cursor: 'pointer',
 
