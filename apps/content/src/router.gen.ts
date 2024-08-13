@@ -29,6 +29,7 @@ import { Route as DemosMenuImport } from './routes/demos/menu'
 import { Route as DemosKbdImport } from './routes/demos/kbd'
 import { Route as DemosInputGroupImport } from './routes/demos/input-group'
 import { Route as DemosInputImport } from './routes/demos/input'
+import { Route as DemosDialogImport } from './routes/demos/dialog'
 import { Route as DemosCodeImport } from './routes/demos/code'
 import { Route as DemosCheckboxImport } from './routes/demos/checkbox'
 import { Route as DemosButtonGroupImport } from './routes/demos/button-group'
@@ -128,6 +129,11 @@ const DemosInputRoute = DemosInputImport.update({
   getParentRoute: () => rootRoute,
 } as any)
 
+const DemosDialogRoute = DemosDialogImport.update({
+  path: '/demos/dialog',
+  getParentRoute: () => rootRoute,
+} as any)
+
 const DemosCodeRoute = DemosCodeImport.update({
   path: '/demos/code',
   getParentRoute: () => rootRoute,
@@ -202,6 +208,13 @@ declare module '@tanstack/react-router' {
       path: '/demos/code'
       fullPath: '/demos/code'
       preLoaderRoute: typeof DemosCodeImport
+      parentRoute: typeof rootRoute
+    }
+    '/demos/dialog': {
+      id: '/demos/dialog'
+      path: '/demos/dialog'
+      fullPath: '/demos/dialog'
+      preLoaderRoute: typeof DemosDialogImport
       parentRoute: typeof rootRoute
     }
     '/demos/input': {
@@ -342,6 +355,7 @@ export const routeTree = rootRoute.addChildren({
   DemosButtonGroupRoute,
   DemosCheckboxRoute,
   DemosCodeRoute,
+  DemosDialogRoute,
   DemosInputRoute,
   DemosInputGroupRoute,
   DemosKbdRoute,
@@ -376,6 +390,7 @@ export const routeTree = rootRoute.addChildren({
         "/demos/button-group",
         "/demos/checkbox",
         "/demos/code",
+        "/demos/dialog",
         "/demos/input",
         "/demos/input-group",
         "/demos/kbd",
@@ -413,6 +428,9 @@ export const routeTree = rootRoute.addChildren({
     },
     "/demos/code": {
       "filePath": "demos/code.tsx"
+    },
+    "/demos/dialog": {
+      "filePath": "demos/dialog.tsx"
     },
     "/demos/input": {
       "filePath": "demos/input.tsx"
