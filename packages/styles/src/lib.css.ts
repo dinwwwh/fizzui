@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-restricted-imports
 import { style } from '@vanilla-extract/css'
 import { vars } from './themes.css'
 

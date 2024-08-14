@@ -25,6 +25,10 @@ export default antfu(
         name: '@vanilla-extract/recipes',
         importNames: ['recipe'],
         message: 'Please use the `recipe` function from `@styles/lib` instead.',
+      }, {
+        name: '@vanilla-extract/css',
+        importNames: ['style'],
+        message: 'Please use the `style` function from `@styles/lib` instead.',
       }],
     },
   },

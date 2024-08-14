@@ -1,6 +1,7 @@
 export * from './components'
 export * as u from './components'
 export * from './animation.css'
+export * from './lib'
 export * from './lib.css'
 export * from './themes.css'
 export * from './utils'

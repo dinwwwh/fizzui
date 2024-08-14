@@ -1,4 +1,5 @@
 import { recipe as baseRecipe } from '@vanilla-extract/recipes'
+import { style as baseStyle } from '@vanilla-extract/css'
 import { reset } from './lib.css'
 
 export const recipe: typeof baseRecipe = (options, ...args) => {
@@ -8,4 +9,10 @@ export const recipe: typeof baseRecipe = (options, ...args) => {
     ...options,
     base: [reset, ...base],
   }, ...args)
+}
+
+export const style: typeof baseStyle = (_, ...args) => {
+  const options = Array.isArray(_) ? _ : _ ? [_] : []
+
+  return baseStyle([reset, ...options], ...args)
 }
