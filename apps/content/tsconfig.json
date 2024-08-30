@@ -1,5 +1,5 @@
 {
-  "extends": "@fizzui/tsconfig/react.config.json",
+  "extends": "@dinwwwh/tsconfig/dom.json",
   "compilerOptions": {
     "paths": {
       "@content/*": ["./src/*"]
@@ -7,7 +7,7 @@
     "types": ["vite/client"]
   },
   "references": [
-    { "path": "../../packages/styles/tsconfig.json" }
+    { "path": "../../packages/styles/tsconfig.app.json" }
   ],
   "include": ["src"]
 }

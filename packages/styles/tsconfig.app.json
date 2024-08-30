@@ -1,0 +1,23 @@
+{
+  "extends": "@dinwwwh/tsconfig/base-lib.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@styles/*": ["./src/*"]
+    },
+    "types": ["vite/client"]
+  },
+  "references": [
+    { "path": "../compose/tsconfig.app.json" }
+  ],
+  "include": [
+    "src"
+  ],
+  "exclude": [
+    "**/*.test.*",
+    "**/*.spec.*",
+    "**/__tests__/**",
+    "**/__mocks__/**",
+    "**/__snapshots__/**"
+  ]
+}

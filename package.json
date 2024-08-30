@@ -7,11 +7,9 @@
     "node": ">=20"
   },
   "scripts": {
-    "dev": "turbo dev --filter=./apps/*",
-    "build": "turbo build",
-    "preview": "turbo preview --filter=./apps/*",
-    "type:check": "turbo type:check",
-    "test": "turbo test",
+    "build:packages": "pnpm run -r --filter=./packages/* build",
+    "type:check": "pnpm run -r type:check",
+    "test": "pnpm run -r test",
     "lint:check": "eslint --max-warnings 0 .",
     "lint:fix": "eslint --max-warnings 0 --fix ."
   },
@@ -21,7 +19,6 @@
     "eslint": "^9.7.0",
     "eslint-plugin-format": "^0.1.2",
     "eslint-plugin-react-hooks": "5.1.0-rc-9c6806964f-20240703",
-    "eslint-plugin-react-refresh": "^0.4.9",
-    "turbo": "^2.0.9"
+    "eslint-plugin-react-refresh": "^0.4.9"
   }
 }
