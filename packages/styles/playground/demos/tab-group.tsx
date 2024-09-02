@@ -1,4 +1,3 @@
-import { createFileRoute } from '@tanstack/react-router'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@radix-ui/react-tabs'
 import { tabGroup } from '../../src'
 import { DemoContainer, DemoFlexRow } from '../components/demo'
